@@ -34,7 +34,10 @@ const WorkSection = ({ dict }: WorkSectionProps) => {
 
   return (
     <Section id="work" py="py-12 lg:py-24">
-      <SectionHeader title={dict?.work?.title} subtitle={dict?.work?.subtitle} />
+      <SectionHeader
+        title={dict?.work?.title}
+        subtitle={dict?.work?.subtitle}
+      />
 
       <div className="flex flex-col gap-2">
         {/* Featured Project */}

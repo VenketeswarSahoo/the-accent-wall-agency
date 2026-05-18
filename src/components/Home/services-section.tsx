@@ -94,7 +94,8 @@ const ServicesSection = ({ dict }: ServicesSectionProps) => {
 
                     <div className="mt-4 opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                       <span className="text-primary text-sm font-medium flex items-center gap-2 cursor-pointer">
-                        {dict?.services?.exploreText} <ArrowUpRight className="size-4" />
+                        {dict?.services?.exploreText}{" "}
+                        <ArrowUpRight className="size-4" />
                       </span>
                     </div>
                   </div>
@@ -136,7 +137,8 @@ const ServicesSection = ({ dict }: ServicesSectionProps) => {
                 </div>
                 <div className="mt-2">
                   <span className="text-primary text-sm font-medium flex items-center gap-2">
-                    {dict?.services?.exploreText} <ArrowUpRight className="size-4" />
+                    {dict?.services?.exploreText}{" "}
+                    <ArrowUpRight className="size-4" />
                   </span>
                 </div>
               </div>

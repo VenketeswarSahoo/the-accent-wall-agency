@@ -1,5 +1,6 @@
 import React from "react";
 import { NumberTicker } from "../ui/number-ticker";
+import Mandala from "../ui/mandala";
 
 interface StatItem {
   value1: number;
@@ -18,22 +19,34 @@ interface AboutSectionProps {
 const AboutSection = ({ dict }: AboutSectionProps) => {
   const stats: StatItem[] = dict?.about?.stats || [];
   const headline = dict?.about?.headline || "";
-  const highlightWord = headline.includes("Generative AI") ? "Generative AI" : "IA Generativa";
+  const highlightWord = headline.includes("Generative AI")
+    ? "Generative AI"
+    : "IA Generativa";
   const parts = headline.split(highlightWord);
 
   return (
-    <Section id="about" py="pb-16 lg:pb-32">
-      <span className="text-sm uppercase font-medium text-muted-foreground pb-4 mb-16 block border-b border-white/10 pt-8">
+    <Section
+      id="about"
+      py="pb-16 lg:pb-32"
+      className="relative overflow-hidden"
+    >
+      <span className="text-sm uppercase font-medium text-muted-foreground pb-4 block border-b border-white/10 pt-8 relative z-10">
         {dict?.about?.title}
       </span>
 
-      <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white max-w-[62rem] mb-24 lg:mb-32">
+      <Mandala
+        variant="mandala-2"
+        className="absolute top-[10%] right-[-15%] w-[55vw] h-[55vw] max-w-[750px] max-h-[750px] text-primary/25 pointer-events-none select-none z-0"
+        speed={500}
+      />
+
+      <h2 className="relative z-10 text-3xl md:text-4xl lg:text-6xl font-bold text-white max-w-[62rem] mb-24 lg:mb-32 leading-tight">
         {parts[0]}
         <span className="text-primary italic">{highlightWord}</span>
         {parts[1]}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col gap-6">
             <div className="flex items-baseline text-6xl lg:text-8xl font-black text-primary tracking-tighter">
