@@ -5,8 +5,22 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { work1, work2, work3 } from "@/assets";
 
-const row1Images = [work1, work2, work3, work1, work2, work3];
-const row2Images = [work3, work2, work1, work3, work2, work1];
+const row1Images = [
+  "https://images.pexels.com/photos/7993419/pexels-photo-7993419.jpeg?_gl=1*1429sx6*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjE4MDQkajIzJGwwJGgw",
+  work2,
+  work3,
+  "https://images.pexels.com/photos/33176102/pexels-photo-33176102.jpeg?_gl=1*da3far*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjIwNTckajU5JGwwJGgw",
+  work2,
+  work3,
+];
+const row2Images = [
+  work3,
+  work2,
+  "https://images.pexels.com/photos/7993419/pexels-photo-7993419.jpeg?_gl=1*1429sx6*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjE4MDQkajIzJGwwJGgw",
+  work3,
+  work2,
+  "https://images.pexels.com/photos/33176102/pexels-photo-33176102.jpeg?_gl=1*da3far*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjIwNTckajU5JGwwJGgw",
+];
 
 const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
   <div className="flex w-full overflow-hidden">

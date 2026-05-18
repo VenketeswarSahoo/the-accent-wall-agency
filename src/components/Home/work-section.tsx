@@ -17,17 +17,19 @@ const WorkSection = ({ dict }: WorkSectionProps) => {
   const projects = [
     {
       ...localizedProjects[0],
-      image: work3,
+      image:
+        "https://images.pexels.com/photos/7993419/pexels-photo-7993419.jpeg?_gl=1*1429sx6*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjE4MDQkajIzJGwwJGgw",
       isFeatured: true,
     },
     {
       ...localizedProjects[1],
-      image: work2,
+      image:
+        "https://images.pexels.com/photos/33176102/pexels-photo-33176102.jpeg?_gl=1*da3far*_ga*MjU0NjMzNDc3LjE3NzkxMjE2OTE.*_ga_8JE65Q40S6*czE3NzkxMjE2OTAkbzEkZzEkdDE3NzkxMjIwNTckajU5JGwwJGgw",
       isFeatured: false,
     },
     {
       ...localizedProjects[2],
-      image: work1,
+      image: work3,
       isFeatured: false,
     },
   ];
