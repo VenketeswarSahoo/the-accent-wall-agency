@@ -103,7 +103,7 @@ export default function HomeClient({ dict, lang }: HomeClientProps) {
         </button>
       </nav>
 
-      <NavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <NavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} dict={dict} />
     </>
   );
 }

@@ -38,27 +38,25 @@ const partnerLogos = [
   partner15,
 ];
 
-const services = [
-  "Web Development",
-  "AI & Automation",
-  "Blockchain",
-  "Media & Motion",
-  "Design Systems",
-];
-
 import Section from "../ui/section";
 
-const PartnerSection = () => {
+interface PartnerSectionProps {
+  dict: any;
+}
+
+const PartnerSection = ({ dict }: PartnerSectionProps) => {
+  const services: string[] = dict?.partners?.services || [];
+
   return (
     <Section py="py-12 lg:py-32">
       <div className="relative w-full bg-primary overflow-hidden min-h-[180px] flex items-center p-10 lg:p-16">
 
         <div className="relative z-10 max-w-3xl">
           <h2 className="text-3xl lg:text-4xl text-white mb-4">
-            We partner with teams that need more than execution.
+            {dict?.partners?.title}
           </h2>
           <p className="text-lg lg:text-2xl text-white">
-            We help define, build, and scale.
+            {dict?.partners?.subtitle}
           </p>
         </div>
 

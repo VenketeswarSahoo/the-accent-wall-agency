@@ -5,34 +5,36 @@ import { work1, work2, work3, ProjectLink } from "@/assets";
 import ArrowLink from "@/components/ui/arrow-link";
 import { ArrowUpRight } from "lucide-react";
 
-const projects = [
-  {
-    title: "FLEXPLAYS",
-    categories: "Branding, Web App, Platform Design, Backend",
-    image: work3,
-    isFeatured: true,
-  },
-  {
-    title: "AMPLIFI",
-    categories: "Web App, DeFi Platform, UX/UI, Brand Identity",
-    image: work2,
-    isFeatured: false,
-  },
-  {
-    title: "ETERNAL GREEN LANDSCAPING",
-    categories: "Mobile App, IOT Control, Backend, Analytics Dashboard, UX/UI",
-    image: work1,
-    isFeatured: false,
-  },
-];
-
 import Section from "../ui/section";
 import ProjectCard from "./project-card";
 
-const WorkSection = () => {
+interface WorkSectionProps {
+  dict: any;
+}
+
+const WorkSection = ({ dict }: WorkSectionProps) => {
+  const localizedProjects = dict?.work?.projects || [];
+  const projects = [
+    {
+      ...localizedProjects[0],
+      image: work3,
+      isFeatured: true,
+    },
+    {
+      ...localizedProjects[1],
+      image: work2,
+      isFeatured: false,
+    },
+    {
+      ...localizedProjects[2],
+      image: work1,
+      isFeatured: false,
+    },
+  ];
+
   return (
     <Section id="work" py="py-12 lg:py-24">
-      <SectionHeader title="Our Work" subtitle="Selected Projects" />
+      <SectionHeader title={dict?.work?.title} subtitle={dict?.work?.subtitle} />
 
       <div className="flex flex-col gap-2">
         {/* Featured Project */}
@@ -65,7 +67,7 @@ const WorkSection = () => {
       </div>
 
       <div className="w-full flex justify-center mt-8 lg:mt-16">
-        <ArrowLink href="#">See all projects</ArrowLink>
+        <ArrowLink href="#">{dict?.work?.linkText}</ArrowLink>
       </div>
     </Section>
   );

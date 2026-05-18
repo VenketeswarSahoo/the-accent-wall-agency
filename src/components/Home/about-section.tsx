@@ -1,45 +1,36 @@
 import React from "react";
 import { NumberTicker } from "../ui/number-ticker";
 
-const stats = [
-  {
-    value1: 3,
-    text: "x",
-    label: "Faster Delivery",
-    description:
-      "AI-powered workflows let us ship 3x faster than traditional agencies, without ever cutting corners.",
-  },
-  {
-    value1: 50,
-    text: "+",
-    label: "Products Shipped",
-    description:
-      "Brands, SaaS products, AI tools, and on-chain apps delivered globally.",
-  },
-  {
-    value1: 2,
-    value2: 4,
-    text: "wk",
-    label: "Average Sprint",
-    description:
-      "From brief to launch-ready product. We move fast because your market window won't wait.",
-  },
-];
+interface StatItem {
+  value1: number;
+  value2?: number;
+  text: string;
+  label: string;
+  description: string;
+}
 
 import Section from "../ui/section";
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  dict: any;
+}
+
+const AboutSection = ({ dict }: AboutSectionProps) => {
+  const stats: StatItem[] = dict?.about?.stats || [];
+  const headline = dict?.about?.headline || "";
+  const highlightWord = headline.includes("Generative AI") ? "Generative AI" : "IA Generativa";
+  const parts = headline.split(highlightWord);
+
   return (
     <Section id="about" py="pb-16 lg:pb-32">
       <span className="text-sm uppercase font-medium text-muted-foreground pb-4 mb-16 block border-b border-white/10 pt-8">
-        About Us
+        {dict?.about?.title}
       </span>
 
       <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white max-w-[62rem] mb-24 lg:mb-32">
-        We're not a traditional agency. We're a studio where designers and
-        engineers use{" "}
-        <span className="text-primary italic">AI to move faster</span> and
-        deliver better work than you've come to expect.
+        {parts[0]}
+        <span className="text-primary italic">{highlightWord}</span>
+        {parts[1]}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">

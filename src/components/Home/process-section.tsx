@@ -1,40 +1,16 @@
 import React from "react";
 import Section from "../ui/section";
 
-const processes = [
-  {
-    number: "01",
-    title: "Align",
-    description:
-      "One sharp workshop to lock in scope, goals, and success metrics. No bloated discovery phases. We extract what matters and start moving within 24 hours.",
-  },
-  {
-    number: "02",
-    title: "Sprint Design",
-    description:
-      "High-fidelity, production-ready designs in days. We prototype fast, validate early, and eliminate guesswork before a single line of code is written.",
-  },
-  {
-    number: "03",
-    title: "AI-Powered Build",
-    description:
-      "AI handles the heavy lifting while our engineers guarantee quality. The result: clean, scalable code shipped at a pace no traditional studio can touch.",
-  },
-  {
-    number: "04",
-    title: "QA & Launch",
-    description:
-      "Rigorous testing, staging environments, and launch-day support. We ship it live, keep an eye on it, and fix anything on the spot.",
-  },
-  {
-    number: "05",
-    title: "Scale",
-    description:
-      "Post-launch iteration, new features, and performance optimization. We stay in it as your product grows, as partners not just vendors.",
-  },
-];
+interface ProcessSectionProps {
+  dict: any;
+}
 
-const ProcessSection = () => {
+const ProcessSection = ({ dict }: ProcessSectionProps) => {
+  const processes = dict?.process?.list || [];
+  const headline = dict?.process?.headline || "";
+  const highlightWord = headline.includes("in weeks.") ? "in weeks." : "en semanas.";
+  const parts = headline.split(highlightWord);
+
   return (
     <Section id="process" py="py-16 lg:py-40">
       <div className="flex flex-col gap-12 lg:gap-20">
@@ -42,22 +18,22 @@ const ProcessSection = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end border-b border-white/10 pb-12 gap-8">
           <div className="flex flex-col gap-4 lg:gap-6">
             <span className="text-xs lg:text-sm font-medium text-muted-foreground uppercase tracking-widest">
-              How We Work
+              {dict?.process?.title}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tighter max-w-4xl leading-[1.1]">
-              From brief to shipped{" "}
-              <span className="text-primary">in weeks.</span>
+              {parts[0]}
+              <span className="text-primary">{highlightWord}</span>
+              {parts[1]}
             </h2>
           </div>
           <p className="max-w-[22rem] text-muted-foreground text-sm lg:text-base lg:text-right leading-relaxed">
-            A lean, AI-powered process built for speed. No unnecessary rounds,
-            no bloated timelines. Just outcomes.
+            {dict?.process?.description}
           </p>
         </div>
 
         {/* Process List */}
         <div className="flex flex-col">
-          {processes.map((process, index) => (
+          {processes.map((process: any, index: number) => (
             <div
               key={index}
               className="group grid grid-cols-1 md:grid-cols-12 items-start py-8 lg:py-12 border-b border-white/5 last:border-0 transition-all duration-300"

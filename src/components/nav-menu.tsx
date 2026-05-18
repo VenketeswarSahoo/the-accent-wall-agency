@@ -7,9 +7,16 @@ import { Mail, ArrowUpRight } from "lucide-react";
 interface NavMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  dict: any;
 }
 
-const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose }) => {
+interface MenuItem {
+  title: string;
+  subtitle: string;
+  href: string;
+}
+
+const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
   // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -22,13 +29,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const menuItems = [
-    { title: "HOME", subtitle: "BACK TO", href: "#" },
-    { title: "WORKS", subtitle: "EXPLORE OUR", href: "#" },
-    { title: "ABOUT", subtitle: "LEARN ABOUT", href: "#" },
-    { title: "STUDIO", subtitle: "VISIT OUR", href: "#" },
-    { title: "CONTACT", subtitle: "GET IN TOUCH", href: "#" },
-  ];
+  const menuItems: MenuItem[] = dict?.navigation?.menu || [];
 
   return (
     <AnimatePresence>
@@ -44,7 +45,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose }) => {
           >
             <div className="flex flex-col gap-6 lg:mt-auto">
               <h4 className="text-xs uppercase tracking-widest text-white/40 mb-2">
-                Connect
+                {dict?.navigation?.connect}
               </h4>
               <ul className="flex flex-col gap-4 text-sm">
                 <li>

@@ -41,7 +41,11 @@ const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
   </div>
 );
 
-const SelectedWorkSection = () => {
+interface SelectedWorkSectionProps {
+  dict: any;
+}
+
+const SelectedWorkSection = ({ dict }: SelectedWorkSectionProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -64,18 +68,15 @@ const SelectedWorkSection = () => {
       <div className="absolute top-8 left-6 lg:top-24 lg:left-12 z-20">
         <div className="flex flex-col gap-8">
           <span className="text-sm font-medium text-muted-foreground uppercase">
-            Selected Work
+            {dict?.gallery?.subtitle}
           </span>
           <div className="flex flex-col gap-2">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl">
-              Built fast.
-              <br />
-              <span className="text-primary">No exceptions.</span>
+              {dict?.gallery?.title}
             </h2>
           </div>
           <p className="max-w-[20rem] text-muted-foreground text-md">
-            <span className="text-white font-medium">20+</span> products across
-            brand, product, AI, and blockchain — every one shipped in 2–4 weeks.
+            {dict?.gallery?.text}
           </p>
         </div>
       </div>

@@ -4,46 +4,12 @@ import React, { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-const services = [
-  {
-    number: "01",
-    title: "Brand Identity",
-    description:
-      "Strategic brand identities built for category leadership. Naming, visual systems, and messaging that make you impossible to ignore.",
-  },
-  {
-    number: "02",
-    title: "Product & Development",
-    description:
-      "AI-accelerated engineering that ships production-ready web and mobile products in 2-4 weeks. Speed without compromise.",
-  },
-  {
-    number: "03",
-    title: "AI & Automation",
-    description:
-      "Custom AI tools, smart automations, and intelligent workflows that save your team thousands of hours and unlock a new level of productivity.",
-  },
-  {
-    number: "04",
-    title: "Web3 & Blockchain",
-    description:
-      "On-chain applications and smart contracts that bridge the gap between complex tech and intuitive user experiences.",
-  },
-  {
-    number: "05",
-    title: "Motion & Media",
-    description:
-      "High-fidelity motion graphics and video production that tell your story with cinematic precision and impact.",
-  },
-  {
-    number: "06",
-    title: "Growth & Strategy",
-    description:
-      "Data-driven growth strategies that scale your product from zero to one and beyond with predictable results.",
-  },
-];
+interface ServicesSectionProps {
+  dict: any;
+}
 
-const ServicesSection = () => {
+const ServicesSection = ({ dict }: ServicesSectionProps) => {
+  const services = dict?.services?.list || [];
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -73,11 +39,10 @@ const ServicesSection = () => {
             <div className="flex h-screen w-[75vw] flex-none flex-col justify-between px-6 py-24 lg:px-12 lg:py-32">
               <div className="w-full">
                 <span className="text-sm font-medium text-muted-foreground mb-8 block uppercase">
-                  Services
+                  {dict?.services?.title}
                 </span>
                 <h2 className="text-4xl md:text-5xl font-medium text-white max-w-2xl">
-                  End-to-end delivery. One studio. Zero bottlenecks, zero
-                  handoff delays.
+                  {dict?.services?.subtitle}
                 </h2>
                 <div className="flex items-center gap-4 text-xs text-muted-foreground uppercase mt-8">
                   <span className="flex gap-2">
@@ -88,20 +53,18 @@ const ServicesSection = () => {
                       />
                     ))}
                   </span>
-                  Scroll to explore
+                  {dict?.services?.scrollText}
                 </div>
               </div>
 
               <p className="max-w-md text-muted-foreground text-sm md:text-lg">
-                Brand, product, AI, blockchain, and media. All under one roof,
-                all moving at the speed your business demands. We ship what
-                other agencies scope out for six months.
+                {dict?.services?.description}
               </p>
             </div>
 
             {/* Cards Section */}
             <div className="flex items-end pb-32 pr-[50vw]">
-              {services.map((service, index) => (
+              {services.map((service: any, index: number) => (
                 <div
                   key={index}
                   className="group relative flex h-[70vh] w-[350px] md:w-[450px] lg:w-[600px] flex-none flex-col justify-between border-l border-white/5 p-10 lg:p-16 lg:pb-24 transition-colors"
@@ -131,7 +94,7 @@ const ServicesSection = () => {
 
                     <div className="mt-4 opacity-0 -translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                       <span className="text-primary text-sm font-medium flex items-center gap-2 cursor-pointer">
-                        Explore <ArrowUpRight className="size-4" />
+                        {dict?.services?.exploreText} <ArrowUpRight className="size-4" />
                       </span>
                     </div>
                   </div>
@@ -147,16 +110,15 @@ const ServicesSection = () => {
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-6">
             <span className="text-sm font-medium text-muted-foreground uppercase">
-              Services
+              {dict?.services?.title}
             </span>
             <h2 className="text-3xl font-medium text-white">
-              End-to-end delivery. One studio. Zero bottlenecks, zero handoff
-              delays.
+              {dict?.services?.subtitle}
             </h2>
           </div>
 
           <div className="flex flex-col">
-            {services.map((service, index) => (
+            {services.map((service: any, index: number) => (
               <div
                 key={index}
                 className="flex flex-col gap-6 py-12 border-b border-white/10 last:border-0"
@@ -174,7 +136,7 @@ const ServicesSection = () => {
                 </div>
                 <div className="mt-2">
                   <span className="text-primary text-sm font-medium flex items-center gap-2">
-                    Explore <ArrowUpRight className="size-4" />
+                    {dict?.services?.exploreText} <ArrowUpRight className="size-4" />
                   </span>
                 </div>
               </div>

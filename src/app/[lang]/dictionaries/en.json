@@ -1,12 +1,169 @@
 {
-  "firstLine": "We Build & Ship.",
-  "secondLine": "Weeks, Not Months.",
-  "description": "AI-accelerated workflows. World-class design. We take your idea from brief to a live product, fast and without cutting corners.",
-  "shipProduct": "Ship your product",
-  "techStack": "AI-accelerated delivery · Brand identity · Product design · Automation · Blockchain · Web & mobile",
+  "firstLine": "AI Engineered. Hand Painted.",
+  "secondLine": "Flawless Walls.",
+  "description": "Stop staring at blank drywall. We use advanced generative design to map breathtaking, mathematically perfect mandalas onto your space—brought to life entirely by hand by local master artists.",
+  "shipProduct": "Transform Your Space",
+  "techStack": "AI Precision · Human Soul · Living Room Mandalas · Commercial Spatial Branding · Zero Guesswork Previews · Washable Fine Art",
   "navigation": {
     "home": "Home",
     "map": "Map",
-    "demo": "Demo"
+    "demo": "Demo",
+    "connect": "Connect",
+    "menu": [
+      { "title": "HOME", "subtitle": "BACK TO", "href": "#" },
+      { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "#" },
+      { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "#about" },
+      { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "#process" },
+      { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "#footer" }
+    ]
+  },
+  "partners": {
+    "title": "We partner with architects, interior designers, and curators.",
+    "subtitle": "We help harmonize, design, and install.",
+    "services": [
+      "Hand-Painted Murals",
+      "Metallic Gold Leaf",
+      "Sacred Geometry",
+      "Bespoke Wall Art",
+      "AI Spatial Visuals"
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "headline": "We're not a traditional art studio. We're a premium agency where engineers and master artists use Generative AI to design perfect layouts and execute them by hand with absolute geometric precision.",
+    "stats": [
+      {
+        "value1": 100,
+        "text": "%",
+        "label": "Hand-Painted Detail",
+        "description": "Every mandala is drawn and painted by hand directly onto your wall, integrating pure gold leaf and rich metallic textures."
+      },
+      {
+        "value1": 10,
+        "text": "sec",
+        "label": "AI Spatial Rendering",
+        "description": "Upload a photo of your wall, choose a reference, and see custom sacred geometry painted onto your wall in seconds."
+      },
+      {
+        "value1": 120,
+        "text": "+",
+        "label": "Bespoke Murals",
+        "description": "Commissioned wall-painted murals enhancing luxury residences, wellness retreats, and hotels globally."
+      }
+    ]
+  },
+  "work": {
+    "title": "Selected Works",
+    "subtitle": "Bespoke Installations",
+    "linkText": "See all projects",
+    "projects": [
+      {
+        "title": "THE GOLDEN RATIO",
+        "categories": "Bespoke Painted Mural, Sacred Geometry, Hand-Painted Metallic Detailing"
+      },
+      {
+        "title": "SAMSARA MURAL",
+        "categories": "Hand-Painted Wall Mural, Pure Gold Leafing, Metallic Lacquers"
+      },
+      {
+        "title": "THE LOTUS CIRCLE",
+        "categories": "Gold Leaf Mural Art, Textured Sacred Geometry, Private Residence Salon"
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "From vector design sketch to architectural wall installation.",
+    "scrollText": "Scroll to explore",
+    "exploreText": "Explore",
+    "description": "Bespoke hand-painted murals, gold leaf textures, sacred geometry design, and instant AI wall previews. Everything is mathematically aligned, designed in-house, and painted with expert precision.",
+    "list": [
+      {
+        "number": "01",
+        "title": "Custom Concepting",
+        "description": "Bespoke geometric layouts engineered for your space. Traditional symbolism, floral filigree, and customized styling parameters."
+      },
+      {
+        "number": "02",
+        "title": "Live Room Prototyping",
+        "description": "Upload a photo of your empty wall. Our perspective mapping software overlays the digital mandala onto your room so you see the final look instantly."
+      },
+      {
+        "number": "03",
+        "title": "AI-Driven Generation",
+        "description": "We use state-of-the-art generative models to instantly iterate through endless variations of complexity, fine lines, and dot-work."
+      },
+      {
+        "number": "04",
+        "title": "Premium Hand-Painting",
+        "description": "Our vetted network of local master painters interprets the digital blueprint into an organic, hand-crafted masterpiece using washable acrylics."
+      },
+      {
+        "number": "05",
+        "title": "Texture & Metallic Finishes",
+        "description": "Elevate the artwork with premium gold-leafing, structural texturing, or metallic paints that catch the light beautifully."
+      },
+      {
+        "number": "06",
+        "title": "Commercial Spaces Scaling",
+        "description": "Tailored, high-impact branding visuals for cafes, hotel lobbies, corporate backdrops, and modern wellness centers."
+      }
+    ]
+  },
+  "process": {
+    "title": "How We Work",
+    "headline": "From brief to masterpiece in weeks.",
+    "description": "A precise, math-driven artistic journey. Combining advanced spatial analysis with meticulous craftsmanship.",
+    "list": [
+      {
+        "number": "01",
+        "title": "Align",
+        "description": "One short brief to lock in your theme, color choices, and exact wall measurements."
+      },
+      {
+        "number": "02",
+        "title": "AI Design Sprint",
+        "description": "Our engine generates highly detailed mandala mockups mapped over photos of your actual room in days, eliminating all guesswork."
+      },
+      {
+        "number": "03",
+        "title": "Hand-Coded Blueprint",
+        "description": "We convert the digital design into high-resolution mapping coordinates for our artists, guaranteeing absolute mathematical symmetry."
+      },
+      {
+        "number": "04",
+        "title": "Freehand Execution",
+        "description": "Our local master painters step in, bringing the canvas to life on-site with clean linework and meticulous detail."
+      },
+      {
+        "number": "05",
+        "title": "Seal & Protect",
+        "description": "We apply a protective matte varnish coating to ensure your handmade mural remains vibrant, scratch-resistant, and entirely washable for years."
+      }
+    ]
+  },
+  "gallery": {
+    "subtitle": "CURATED COLLECTION",
+    "title": "Sacred spaces globally.",
+    "text": "120+ masterpieces. Preview your dream design painted on your wall instantly with our advanced spatial AI, then hand-painted directly onto your wall."
+  },
+  "cta": {
+    "topText": "Your custom masterpiece is 4 weeks away.",
+    "titleLine1": "Stop waiting.",
+    "titleLine2": "Start creating.",
+    "description": "Upload a photo of your wall. Our Spatial AI will instantly paint and render a breathtaking custom mandala on it, followed by physical curation by our master artisans.",
+    "buttonText": "Commission Your Art"
+  },
+  "footer": {
+    "bio": "A specialized studio combining sacred geometry and advanced Spatial AI with hand-painted mastery. Custom hand-painted murals and textured gold leaf mandalas painted directly onto extraordinary walls.",
+    "servicesHeader": "Services",
+    "companyHeader": "Company",
+    "contactHeader": "Connect",
+    "rights": "All rights reserved.",
+    "newsletter": "Newsletter",
+    "newsletterPlaceholder": "your@email.com",
+    "newsletterDescription": "Updates on new work, thinking, and what we're shipping next.",
+    "subscribe": "Subscribe",
+    "companyLinks": ["About", "Works", "Studio", "Contact"]
   }
 }
