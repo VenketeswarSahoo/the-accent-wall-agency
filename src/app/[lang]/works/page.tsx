@@ -1,8 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
-import HomeClient from "@/components/Home/home-client";
-import Footer from "@/components/Home/footer";
 import Mandala from "@/components/ui/mandala";
 import WorksFilterWrapper from "@/components/Work/works-filter-wrapper";
 
@@ -45,15 +43,9 @@ export default async function WorksPage({ params }: PageProps) {
           }}
         />
 
-        {/* Navigation */}
-        <HomeClient dict={dict} lang={lang} />
-
         {/* Custom Works Interactive Heading & Grid */}
         <WorksFilterWrapper dict={dict} lang={lang} />
       </div>
-
-      {/* Footer */}
-      <Footer dict={dict} lang={lang} />
     </main>
   );
 }

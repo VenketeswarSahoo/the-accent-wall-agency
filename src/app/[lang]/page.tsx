@@ -1,6 +1,5 @@
 import AboutSection from "@/components/Home/about-section";
 import CTASection from "@/components/Home/cta-section";
-import Footer from "@/components/Home/footer";
 import Hero from "@/components/Home/hero";
 import PartnerSection from "@/components/Home/partner-section";
 import ProcessSection from "@/components/Home/process-section";
@@ -34,7 +33,6 @@ const Home = async ({ params }: PageProps) => {
       <ProcessSection dict={dict} />
       <SelectedWorkSection dict={dict} />
       <CTASection dict={dict} lang={lang} />
-      <Footer dict={dict} lang={lang} />
     </div>
   );
 };

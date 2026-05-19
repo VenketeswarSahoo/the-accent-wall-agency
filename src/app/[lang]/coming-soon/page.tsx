@@ -2,7 +2,6 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
 import ComingSoonClient from "@/components/coming-soon/coming-soon-client";
-import Footer from "@/components/Home/footer";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -31,9 +30,6 @@ export default async function ComingSoonPage({ params }: PageProps) {
   const dict = await getDictionary(lang as Locale);
 
   return (
-    <>
-      <ComingSoonClient dict={dict} lang={lang} />
-      <Footer dict={dict} lang={lang} />
-    </>
+    <ComingSoonClient dict={dict} lang={lang} />
   );
 }

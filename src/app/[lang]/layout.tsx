@@ -4,6 +4,9 @@ import "../globals.css";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { haffer } from "../fonts";
+import { getDictionary, Locale } from "@/app/[lang]/dictionaries";
+import HomeClient from "@/components/common/home-client";
+import Footer from "@/components/common/footer";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -27,6 +30,7 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const dict = await getDictionary(lang as Locale);
   
   return (
     <html
@@ -39,8 +43,14 @@ export default async function RootLayout({
         "font-haffer",
       )}
     >
-      <body className="min-h-full flex flex-col">
-        <TooltipProvider>{children}</TooltipProvider>
+      <body className="min-h-full flex flex-col bg-black">
+        <TooltipProvider>
+          <HomeClient dict={dict} lang={lang} />
+          <div className="flex-1 flex flex-col w-full">
+            {children}
+          </div>
+          <Footer dict={dict} lang={lang} />
+        </TooltipProvider>
       </body>
     </html>
   );

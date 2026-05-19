@@ -2,7 +2,6 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
-import HomeClient from "@/components/Home/home-client";
 import { cn } from "@/lib/utils";
 
 interface ComingSoonClientProps {
@@ -53,8 +52,7 @@ export default function ComingSoonClient({ dict, lang }: ComingSoonClientProps) 
         backgroundPosition: "center",
       }}
     >
-      {/* Navigation */}
-      <HomeClient dict={dict} lang={lang} />
+
 
       {/* Cursor Spotlight Glow */}
       <div

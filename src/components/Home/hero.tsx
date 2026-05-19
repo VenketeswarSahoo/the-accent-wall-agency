@@ -1,6 +1,5 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import HomeClient from "@/components/Home/home-client";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
 import ArrowLink from "@/components/ui/arrow-link";
 import Mandala from "@/components/ui/mandala";
@@ -20,7 +19,7 @@ export default async function Hero({ params }: PageProps) {
   const dict = await getDictionary(lang as Locale);
 
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-hidden">
+    <main className="relative min-h-screen bg-black text-white overflow-hidden flex flex-col justify-between pt-24 lg:pt-36">
       {/* Background Glow */}
       <div
         className="absolute top-[-25%] left-[-15%] w-[80%] h-[80%] rounded-full opacity-[0.1] blur-[160px] pointer-events-none z-0"
@@ -43,14 +42,11 @@ export default async function Hero({ params }: PageProps) {
         reverse
       />
 
-      {/* Pass dictionary and current lang to the client component */}
-      <HomeClient dict={dict} lang={lang} />
-
       <Section
         py=""
-        className="min-h-[calc(100svh-120px)] lg:min-h-[calc(100vh-200px)] flex flex-col justify-end lg:block pb-16 lg:pb-0"
+        className="flex-1 flex flex-col justify-end pb-12 lg:pb-24 z-10 w-full"
       >
-        <div className="relative lg:absolute lg:bottom-12 xl:bottom-16 w-full lg:w-auto">
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 lg:gap-0">
             <div className="lg:col-span-7 xl:col-span-7">
               <div>
@@ -73,7 +69,7 @@ export default async function Hero({ params }: PageProps) {
           </div>
         </div>
       </Section>
-      <div className="relative lg:absolute bottom-0 w-full z-10">
+      <div className="relative w-full z-10">
         <div className="border-y border-white/20 py-4 w-full">
           <p className="text-white/40 max-w-[1440px] mx-auto px-6 lg:px-12 2xl:px-0 uppercase text-sm text-center lg:text-left leading-relaxed">
             {dict.techStack}
