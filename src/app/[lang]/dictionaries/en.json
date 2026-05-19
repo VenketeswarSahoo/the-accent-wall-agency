@@ -12,7 +12,7 @@
     "menu": [
       { "title": "HOME", "subtitle": "BACK TO", "href": "#" },
       { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "/works" },
-      { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "#about" },
+      { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "/about" },
       { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "#process" },
       { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "#footer" }
     ]
@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "About Us",
-    "headline": "We're not a traditional art studio. We're a premium agency where engineers and master artists use Generative AI to design perfect layouts and execute them by hand with absolute geometric precision.",
+    "headline": "We're not a traditional art studio. We're a premium agency where engineers and master artists use Generative AI to design mathematically perfect sacred geometry mandalas, executing them directly onto your walls by hand with flawless precision.",
     "stats": [
       {
         "value1": 100,
@@ -189,5 +189,77 @@
     "newsletterDescription": "Updates on new work, thinking, and what we're shipping next.",
     "subscribe": "Subscribe",
     "companyLinks": ["About", "Works", "Studio", "Contact"]
+  },
+  "aboutPage": {
+    "subtitle": "ABOUT US",
+    "titleLine1": "We're the agency",
+    "titleLine2": "that transforms.",
+    "description": "A boutique spatial art agency closing the gap between generative algorithm and master craftsmanship. Sacred geometry, pure gold leaf, and structural fine-art murals—designed with AI precision, painted entirely by hand.",
+    "projects": "120+",
+    "projectsLabel": "MURALS",
+    "delivery": "4-6wk",
+    "deliveryLabel": "CREATION",
+    "faster": "100%",
+    "fasterLabel": "HAND-PAINTED",
+    "manifesto": {
+      "subtitle": "OUR MANIFESTO",
+      "p1": "Most walls are built to divide. We founded The Accent Wall Agency to do the opposite — engineer breathtaking ",
+      "faster": "mandala art",
+      "p2": ", align spaces with ",
+      "better": "sacred geometry",
+      "p3": ", and never compromise on the ",
+      "craft": "human soul",
+      "p4": ". Every complex center, every expanding circle, every fine line is designed by algorithms to collapse the distance between your ",
+      "vision": "internal vision",
+      "p5": " and your ",
+      "space": "outer world."
+    },
+    "stats": [
+      {
+        "value": "120+",
+        "label": "Bespoke murals designed & hand-painted"
+      },
+      {
+        "value": "4-6wk",
+        "label": "Average creation to installation timeline"
+      },
+      {
+        "value": "100%",
+        "label": "Hand-painted geometry with gold leaf"
+      },
+      {
+        "value": "0",
+        "label": "Industrial vinyl prints or stickers used"
+      }
+    ],
+    "howWeWork": {
+      "subtitle": "HOW WE WORK",
+      "cards": [
+        {
+          "num": "I",
+          "bgNum": "I",
+          "title": "Drawn on Paper",
+          "description": "Every bespoke mandala begins as an organic idea. We draw the initial geometric patterns by hand on physical paper, capturing raw artistic inspiration in its purest state."
+        },
+        {
+          "num": "II",
+          "bgNum": "II",
+          "title": "Algorithmic Symmetry",
+          "description": "We upload the drawing to our spatial AI. Our perspective-mapping network overlays the geometry precisely onto your wall, showing you the exact layout scale in real-time."
+        },
+        {
+          "num": "III",
+          "bgNum": "III",
+          "title": "Hand-Painted Soul",
+          "description": "No industrial machines or projections. Our master muralists spend days painting every concentric circle and gold-leaf line entirely by hand, bringing the artwork to life."
+        },
+        {
+          "num": "IV",
+          "bgNum": "IV",
+          "title": "Complete Design Vibe",
+          "description": "We don't just paint a wall—we elevate the entire room's energy. Our mandalas are designed to harmonize with your lighting, furniture, and interior textures, creating a cohesive, soulful spatial vibe."
+        }
+      ]
+    }
   }
 }

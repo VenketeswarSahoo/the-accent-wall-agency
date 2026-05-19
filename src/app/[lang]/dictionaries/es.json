@@ -12,7 +12,7 @@
     "menu": [
       { "title": "INICIO", "subtitle": "REGRESAR A", "href": "#" },
       { "title": "TRABAJOS", "subtitle": "EXPLORA NUESTRO", "href": "/works" },
-      { "title": "NOSOTROS", "subtitle": "CONOCE SOBRE", "href": "#about" },
+      { "title": "NOSOTROS", "subtitle": "CONOCE SOBRE", "href": "/about" },
       { "title": "ESTUDIO", "subtitle": "VISITA NUESTRO", "href": "#process" },
       { "title": "CONTACTO", "subtitle": "PONTE EN CONTACTO", "href": "#footer" }
     ]
@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "Sobre Nosotros",
-    "headline": "No somos un estudio de arte tradicional. Somos una agencia premium donde ingenieros y maestros artistas usan IA Generativa para diseñar planos perfectos y ejecutarlos a mano con absoluta precisión geométrica.",
+    "headline": "No somos un estudio de arte tradicional. Somos una agencia premium donde ingenieros y maestros artistas utilizan IA Generativa para diseñar mandalas de geometría sagrada matemáticamente perfectos, ejecutándolos a mano directamente sobre tus paredes con una precisión impecable.",
     "stats": [
       {
         "value1": 100,
@@ -189,5 +189,77 @@
     "newsletterDescription": "Novedades sobre nuevos trabajos, reflexiones y lo que lanzaremos a continuación.",
     "subscribe": "Suscribirse",
     "companyLinks": ["Sobre Nosotros", "Trabajos", "Estudio", "Contacto"]
+  },
+  "aboutPage": {
+    "subtitle": "SOBRE NOSOTROS",
+    "titleLine1": "Somos la agencia",
+    "titleLine2": "que transforma.",
+    "description": "Una agencia boutique de arte espacial que cierra la brecha entre el algoritmo generativo y la maestría artesanal. Geometría sagrada, pan de oro puro y murales artísticos estructurales: diseñados con precisión de IA, pintados completamente a mano.",
+    "projects": "120+",
+    "projectsLabel": "MURALES",
+    "delivery": "4-6sem",
+    "deliveryLabel": "CREACIÓN",
+    "faster": "100%",
+    "fasterLabel": "PINTADO A MANO",
+    "manifesto": {
+      "subtitle": "NUESTRO MANIFIESTO",
+      "p1": "La mayoría de las paredes se construyen para dividir. Fundamos The Accent Wall Agency para hacer lo contrario: diseñar un arte de ",
+      "faster": "mandalas asombroso",
+      "p2": ", alinear espacios con ",
+      "better": "geometría sagrada",
+      "p3": " y nunca comprometer el ",
+      "craft": "alma humana",
+      "p4": ". Cada centro complejo, cada círculo en expansión y cada línea fina está diseñada por algoritmos para colapsar la distancia entre tu ",
+      "vision": "visión interna",
+      "p5": " y tu ",
+      "space": "mundo exterior."
+    },
+    "stats": [
+      {
+        "value": "120+",
+        "label": "Murales exclusivos diseñados y pintados a mano"
+      },
+      {
+        "value": "4-6sem",
+        "label": "Plazo promedio de creación a instalación"
+      },
+      {
+        "value": "100%",
+        "label": "Geometría pintada a mano con pan de oro"
+      },
+      {
+        "value": "0",
+        "label": "Vinilos industriales o plantillas utilizadas"
+      }
+    ],
+    "howWeWork": {
+      "subtitle": "CÓMO TRABAJAMOS",
+      "cards": [
+        {
+          "num": "I",
+          "bgNum": "I",
+          "title": "Dibujado en Papel",
+          "description": "Cada mandala personalizado comienza como una idea orgánica. Dibujamos los patrones geométricos iniciales a mano sobre papel físico, capturando la inspiración artística en su estado más puro."
+        },
+        {
+          "num": "II",
+          "bgNum": "II",
+          "title": "Simetría Algorítmica",
+          "description": "Subimos el dibujo a nuestra IA espacial. Nuestra red de mapeo de perspectiva superpone la geometría con precisión en tu pared, mostrándote el diseño exacto en tiempo real."
+        },
+        {
+          "num": "III",
+          "bgNum": "III",
+          "title": "Alma Pintada a Mano",
+          "description": "Sin máquinas industriales ni proyecciones mecánicas. Nuestros maestros muralistas dedican días a pintar cada círculo concéntrico y línea de pan de oro totalmente a mano, dando vida a la obra."
+        },
+        {
+          "num": "IV",
+          "bgNum": "IV",
+          "title": "Vibra de Diseño Completa",
+          "description": "No solo pintamos una pared; elevamos la energía de toda la habitación. Nuestros mandalas están diseñados para armonizar con la luz, las texturas y el mobiliario, creando una vibra espacial cohesiva y profunda."
+        }
+      ]
+    }
   }
 }

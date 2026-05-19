@@ -147,7 +147,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
             </div>
 
             <div className="lg:col-span-3 flex flex-col gap-6">
-              <span className="text-[10px] font-medium text-white/30 uppercase">
+              <span className="text-[10px] text-white/30 uppercase">
                 {dict?.footer?.servicesHeader}
               </span>
               <ul className="flex flex-col gap-4">
@@ -165,7 +165,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <span className="text-[10px] font-medium text-white/30 uppercase">
+              <span className="text-[10px] text-white/30 uppercase">
                 {dict?.footer?.companyHeader}
               </span>
               <ul className="flex flex-col gap-4">
@@ -183,7 +183,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <span className="text-[10px] font-medium text-white/30 uppercase">
+              <span className="text-[10px] text-white/30 uppercase">
                 {dict?.footer?.contactHeader}
               </span>
               <ul className="flex flex-col gap-4">
@@ -204,13 +204,13 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
 
           {/* Bottom: Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
-            <span className="text-white/20 text-xs">
+            <span className="text-muted-foreground text-xs">
               © {new Date().getFullYear()} The Accent Wall Agency.{" "}
               {dict?.footer?.rights}
             </span>
             <a
               href="mailto:hello@thecirclecompany.co"
-              className="text-white/20 text-xs hover:text-primary transition-colors"
+              className="text-muted-foreground text-xs hover:text-primary transition-colors"
             >
               hello@thecirclecompany.co
             </a>

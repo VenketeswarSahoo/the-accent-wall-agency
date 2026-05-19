@@ -27,6 +27,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
     if (href === "/works") {
       return `/${lang}/works`;
     }
+    if (href === "/about") {
+      return `/${lang}/about`;
+    }
     if (href === "#" || href === "") {
       return `/${lang}`;
     }
