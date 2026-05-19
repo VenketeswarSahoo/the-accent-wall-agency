@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "**.fbcdn.net",
+      },
+      {
+        protocol: "https",
+        hostname: "**.instagram.com",
+      },
+      {
+        protocol: "https",
         hostname: "picsum.photos",
       },
       {
@@ -27,6 +35,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.pinimg.com",
       },
     ],
   },

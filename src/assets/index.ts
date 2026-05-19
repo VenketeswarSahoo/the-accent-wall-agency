@@ -1,4 +1,5 @@
 export { default as Logo } from "./Img/Logo.svg";
+export { default as LogoIcon } from "./Img/logo-icon.svg";
 export { default as partner1 } from "./Img/partner1.png";
 export { default as partner2 } from "./Img/partner2.png";
 export { default as partner3 } from "./Img/partner3.png";
@@ -16,9 +17,4 @@ export { default as partner14 } from "./Img/partner14.png";
 export { default as partner15 } from "./Img/partner15.png";
 export { default as partner16 } from "./Img/partner16.png";
 export { default as partner17 } from "./Img/partner17.png";
-
-export { default as work1 } from "./Img/work1.png";
-export { default as work2 } from "./Img/work2.png";
-export { default as work3 } from "./Img/work3.png";
-
 export { default as ProjectLink } from "./Img/project-link.svg";
