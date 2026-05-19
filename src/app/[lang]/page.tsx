@@ -29,12 +29,12 @@ const Home = async ({ params }: PageProps) => {
       <Hero params={params} />
       <PartnerSection dict={dict} />
       <AboutSection dict={dict} />
-      <WorkSection dict={dict} />
+      <WorkSection dict={dict} lang={lang} />
       <ServicesSection dict={dict} />
       <ProcessSection dict={dict} />
       <SelectedWorkSection dict={dict} />
-      <CTASection dict={dict} />
-      <Footer dict={dict} />
+      <CTASection dict={dict} lang={lang} />
+      <Footer dict={dict} lang={lang} />
     </div>
   );
 };

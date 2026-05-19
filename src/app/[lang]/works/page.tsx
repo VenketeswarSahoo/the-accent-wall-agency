@@ -53,7 +53,7 @@ export default async function WorksPage({ params }: PageProps) {
       </div>
 
       {/* Footer */}
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </main>
   );
 }

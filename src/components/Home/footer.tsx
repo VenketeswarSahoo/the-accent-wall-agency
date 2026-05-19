@@ -1,12 +1,14 @@
 import React from "react";
 import { Mail } from "lucide-react";
 import Mandala from "../ui/mandala";
+import Link from "next/link";
 
 interface FooterProps {
   dict: any;
+  lang?: string;
 }
 
-const Footer = ({ dict }: FooterProps) => {
+const Footer = ({ dict, lang = "en" }: FooterProps) => {
   const socialLinks = [
     {
       name: "Instagram",
@@ -175,55 +177,55 @@ const Footer = ({ dict }: FooterProps) => {
             </div>
 
             <div className="lg:col-span-3 flex flex-col gap-6">
-              <span className="text-[10px] font-bold text-white/30 uppercase">
+              <span className="text-[10px] font-medium text-white/30 uppercase">
                 {dict?.footer?.servicesHeader}
               </span>
               <ul className="flex flex-col gap-4">
                 {(dict?.services?.list || []).map((item: any) => (
                   <li key={item.title}>
-                    <a
-                      href="#"
+                    <Link
+                      href={`/${lang}/coming-soon`}
                       className="text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
                       {item.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <span className="text-[10px] font-bold text-white/30 uppercase">
+              <span className="text-[10px] font-medium text-white/30 uppercase">
                 {dict?.footer?.companyHeader}
               </span>
               <ul className="flex flex-col gap-4">
                 {(dict?.footer?.companyLinks || []).map((item: string) => (
                   <li key={item}>
-                    <a
-                      href="#"
+                    <Link
+                      href={`/${lang}/coming-soon`}
                       className="text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <span className="text-[10px] font-bold tracking-[0.3em] text-white/30 uppercase">
+              <span className="text-[10px] font-medium text-white/30 uppercase">
                 {dict?.footer?.contactHeader}
               </span>
               <ul className="flex flex-col gap-4">
                 {socialLinks.map((item) => (
                   <li key={item.name}>
-                    <a
-                      href="#"
+                    <Link
+                      href={`/${lang}/coming-soon`}
                       className="flex items-center gap-4 text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
                       {item.icon}
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

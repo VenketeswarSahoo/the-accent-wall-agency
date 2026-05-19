@@ -1,13 +1,15 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 import Section from "../ui/section";
 
 interface CTASectionProps {
   dict: any;
+  lang?: string;
 }
 
-const CTASection = ({ dict }: CTASectionProps) => {
+const CTASection = ({ dict, lang = "en" }: CTASectionProps) => {
   return (
     <Section py="py-16 lg:py-40">
       <div className="max-w-[1440px] mx-auto border-t border-white/10 pt-16 lg:pt-24">
@@ -26,10 +28,13 @@ const CTASection = ({ dict }: CTASectionProps) => {
             <p className="max-w-[32rem] text-muted-foreground text-base lg:text-lg leading-relaxed">
               {dict?.cta?.description}
             </p>
-            <button className="group w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-md hover:bg-primary hover:text-white transition-all duration-300">
+            <Link
+              href={`/${lang}/coming-soon`}
+              className="group w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-md hover:bg-primary hover:text-white transition-all duration-300"
+            >
               {dict?.cta?.buttonText}
               <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

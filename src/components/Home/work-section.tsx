@@ -1,15 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import SectionHeader from "@/components/ui/section-header";
-import { work1, work2, work3, ProjectLink } from "@/assets";
+import { work3 } from "@/assets";
 import ArrowLink from "@/components/ui/arrow-link";
-import { ArrowUpRight } from "lucide-react";
-
 import Section from "../ui/section";
 import ProjectCard from "./project-card";
 
 interface WorkSectionProps {
   dict: any;
+  lang?: string;
   isWorksPage?: boolean;
   activeCategory?: string;
   hideHeader?: boolean;
@@ -18,6 +16,7 @@ interface WorkSectionProps {
 
 const WorkSection = ({
   dict,
+  lang = "en",
   isWorksPage = false,
   activeCategory = "ALL",
   hideHeader = false,
@@ -54,13 +53,30 @@ const WorkSection = ({
       return cats.includes("mural");
     }
     if (query === "SACRED GEOMETRY") {
-      return cats.includes("sacred geometry") || cats.includes("geometría sagrada") || cats.includes("geometria sagrada");
+      return (
+        cats.includes("sacred geometry") ||
+        cats.includes("geometría sagrada") ||
+        cats.includes("geometria sagrada")
+      );
     }
     if (query === "GOLD LEAF") {
-      return cats.includes("gold leaf") || cats.includes("gold leafing") || cats.includes("pan de oro") || cats.includes("oro");
+      return (
+        cats.includes("gold leaf") ||
+        cats.includes("gold leafing") ||
+        cats.includes("pan de oro") ||
+        cats.includes("oro")
+      );
     }
     if (query === "METALLIC") {
-      return cats.includes("metallic") || cats.includes("detailing") || cats.includes("metálico") || cats.includes("metálicos") || cats.includes("metalicos") || cats.includes("lacas") || cats.includes("lacquers");
+      return (
+        cats.includes("metallic") ||
+        cats.includes("detailing") ||
+        cats.includes("metálico") ||
+        cats.includes("metálicos") ||
+        cats.includes("metalicos") ||
+        cats.includes("lacas") ||
+        cats.includes("lacquers")
+      );
     }
     
     return false;
@@ -92,6 +108,7 @@ const WorkSection = ({
               image={project.image}
               isFeatured={true}
               className="mb-2"
+              lang={lang}
             />
           ))}
 
@@ -105,6 +122,7 @@ const WorkSection = ({
                 title={project.title}
                 categories={project.categories}
                 image={project.image}
+                lang={lang}
               />
             ))}
         </div>
@@ -112,7 +130,7 @@ const WorkSection = ({
 
       {!hideFooterLink && (
         <div className="w-full flex justify-center mt-8 lg:mt-16">
-          <ArrowLink href="#">{dict?.work?.linkText}</ArrowLink>
+          <ArrowLink href={`/${lang}/coming-soon`}>{dict?.work?.linkText}</ArrowLink>
         </div>
       )}
     </Section>

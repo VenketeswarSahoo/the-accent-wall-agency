@@ -145,6 +145,7 @@ export default function WorksFilterWrapper({
       <div className="flex-1 relative z-10">
         <WorkSection
           dict={dict}
+          lang={lang}
           isWorksPage={true}
           activeCategory={activeCategory}
           hideHeader={true}

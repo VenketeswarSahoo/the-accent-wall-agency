@@ -67,7 +67,7 @@ export default async function Hero({ params }: PageProps) {
                   {dict.description}
                 </p>
 
-                <ArrowLink href="#">{dict.shipProduct}</ArrowLink>
+                <ArrowLink href={`/${lang}/coming-soon`}>{dict.shipProduct}</ArrowLink>
               </div>
             </div>
           </div>

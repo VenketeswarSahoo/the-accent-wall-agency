@@ -3,13 +3,15 @@ import Image, { StaticImageData } from "next/image";
 import { ProjectLink } from "@/assets";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
   categories: string;
-  image: StaticImageData;
+  image: StaticImageData | string;
   isFeatured?: boolean;
   className?: string;
+  lang?: string;
 }
 
 const ProjectCard = ({
@@ -18,9 +20,13 @@ const ProjectCard = ({
   image,
   isFeatured = false,
   className,
+  lang = "en",
 }: ProjectCardProps) => {
   return (
-    <div className={cn("group cursor-pointer", className)}>
+    <Link
+      href={`/${lang}/coming-soon`}
+      className={cn("block group cursor-pointer", className)}
+    >
       <div
         className={cn(
           "relative w-full overflow-hidden bg-white/5 mb-4",
@@ -71,7 +77,7 @@ const ProjectCard = ({
           ({categories})
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
