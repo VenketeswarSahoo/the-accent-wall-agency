@@ -11,7 +11,7 @@
     "connect": "Connect",
     "menu": [
       { "title": "HOME", "subtitle": "BACK TO", "href": "#" },
-      { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "#" },
+      { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "/works" },
       { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "#about" },
       { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "#process" },
       { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "#footer" }
@@ -56,6 +56,30 @@
     "title": "Selected Works",
     "subtitle": "Bespoke Installations",
     "linkText": "See all projects",
+    "worksPage": {
+      "subtitle": "SELECTED WORK",
+      "title": "Our Work",
+      "project": "Project",
+      "projects": "Projects",
+      "soon": "SOON",
+      "moreProjects": "MORE PROJECTS IN PROGRESS",
+      "soonBadges": [
+        "MURAL ART",
+        "SACRED GEOMETRY",
+        "GOLD LEAF",
+        "METALLIC LACQUERS",
+        "SPATIAL ART",
+        "GENERATIVE DESIGN",
+        "FINE ART"
+      ],
+      "categories": {
+        "all": "ALL",
+        "mural": "MURAL",
+        "sacredGeometry": "SACRED GEOMETRY",
+        "goldLeaf": "GOLD LEAF",
+        "metallic": "METALLIC"
+      }
+    },
     "projects": [
       {
         "title": "THE GOLDEN RATIO",

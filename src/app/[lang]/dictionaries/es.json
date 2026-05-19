@@ -11,7 +11,7 @@
     "connect": "Conectar",
     "menu": [
       { "title": "INICIO", "subtitle": "REGRESAR A", "href": "#" },
-      { "title": "TRABAJOS", "subtitle": "EXPLORA NUESTRO", "href": "#" },
+      { "title": "TRABAJOS", "subtitle": "EXPLORA NUESTRO", "href": "/works" },
       { "title": "NOSOTROS", "subtitle": "CONOCE SOBRE", "href": "#about" },
       { "title": "ESTUDIO", "subtitle": "VISITA NUESTRO", "href": "#process" },
       { "title": "CONTACTO", "subtitle": "PONTE EN CONTACTO", "href": "#footer" }
@@ -56,6 +56,30 @@
     "title": "Trabajos Seleccionados",
     "subtitle": "Instalaciones a Medida",
     "linkText": "Ver todos los proyectos",
+    "worksPage": {
+      "subtitle": "TRABAJO SELECCIONADO",
+      "title": "Nuestro Trabajo",
+      "project": "Proyecto",
+      "projects": "Proyectos",
+      "soon": "PRÓXIMAMENTE",
+      "moreProjects": "MÁS PROYECTOS EN CURSO",
+      "soonBadges": [
+        "ARTE MURAL",
+        "GEOMETRÍA SAGRADA",
+        "PAN DE ORO",
+        "LACAS METÁLICAS",
+        "ARTE ESPACIAL",
+        "DISEÑO GENERATIVO",
+        "BELLAS ARTES"
+      ],
+      "categories": {
+        "all": "TODOS",
+        "mural": "MURAL",
+        "sacredGeometry": "GEOMETRÍA SAGRADA",
+        "goldLeaf": "PAN DE ORO",
+        "metallic": "METÁLICO"
+      }
+    },
     "projects": [
       {
         "title": "LA PROPORCIÓN ÁUREA",

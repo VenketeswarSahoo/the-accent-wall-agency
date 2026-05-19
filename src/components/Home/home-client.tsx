@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import NavMenu from "@/components/nav-menu";
+import NavMenu from "@/components/Navbar/nav-menu";
 
 interface HomeClientProps {
   dict: any;
@@ -23,17 +23,17 @@ export default function HomeClient({ dict, lang }: HomeClientProps) {
 
   return (
     <>
-      <nav className="relative z-[60] flex items-center justify-between py-6 lg:py-8 px-6 lg:px-12 2xl:px-0 w-full max-w-360 mx-auto pointer-events-none">
+      <nav className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between py-5 lg:py-6 px-6 lg:px-12 2xl:px-0 w-full max-w-360 mx-auto pointer-events-none transition-all duration-300">
         <div className="flex items-center gap-8 pointer-events-auto">
           {/* Logo */}
-          <div className="flex items-center gap-4">
+          <Link href={`/${lang}`} className="flex items-center gap-4">
             <svg
               width="123"
               height="40"
               viewBox="0 0 123 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="relative h-10 text-white z-[60]"
+              className="relative h-10 text-white z-[60] cursor-pointer"
             >
               <path
                 opacity="0.4"
@@ -67,7 +67,7 @@ export default function HomeClient({ dict, lang }: HomeClientProps) {
                 fill="currentColor"
               ></path>
             </svg>
-          </div>
+          </Link>
 
           {/* Language Switcher */}
           <div className="flex items-center gap-4 text-xs font-medium tracking-widest uppercase pointer-events-auto">
@@ -103,7 +103,11 @@ export default function HomeClient({ dict, lang }: HomeClientProps) {
         </button>
       </nav>
 
-      <NavMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} dict={dict} />
+      <NavMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        dict={dict}
+      />
     </>
   );
 }

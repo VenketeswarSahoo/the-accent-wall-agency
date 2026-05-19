@@ -3,6 +3,8 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavMenuProps {
   isOpen: boolean;
@@ -17,6 +19,28 @@ interface MenuItem {
 }
 
 const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
+  const pathname = usePathname();
+  const segments = pathname ? pathname.split("/") : [];
+  const lang = segments[1] || "en";
+
+  const getLocalizedHref = (href: string) => {
+    if (href === "/works") {
+      return `/${lang}/works`;
+    }
+    if (href === "#" || href === "") {
+      return `/${lang}`;
+    }
+    if (href.startsWith("#")) {
+      // If on homepage, just scroll to anchor
+      if (pathname === `/${lang}` || pathname === `/` || pathname === "") {
+        return href;
+      }
+      // If on another page, go to homepage + anchor
+      return `/${lang}${href}`;
+    }
+    return href;
+  };
+
   // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -163,9 +187,10 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
             <div className="flex-1 overflow-y-auto w-full pt-16 lg:pt-0">
               <div className="flex flex-col h-full items-start justify-center">
                 {menuItems.map((item, index) => (
-                  <a
+                  <Link
                     key={item.title}
-                    href={item.href}
+                    href={getLocalizedHref(item.href)}
+                    onClick={onClose}
                     className="w-full relative group border-b border-white/5 last:border-b-0 flex flex-col justify-center px-8 lg:px-20 py-4 lg:py-8 overflow-hidden"
                   >
                     {/* Hover bg effect: subtle gradient and animated primary lines expanding to right and bottom */}
@@ -186,7 +211,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
 
                       <ArrowUpRight className="text-primary size-6 lg:size-8 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-out" />
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

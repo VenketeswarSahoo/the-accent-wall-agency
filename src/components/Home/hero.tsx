@@ -1,6 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import HomeClient from "@/app/[lang]/home-client";
+import HomeClient from "@/components/Home/home-client";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
 import ArrowLink from "@/components/ui/arrow-link";
 import Mandala from "@/components/ui/mandala";
