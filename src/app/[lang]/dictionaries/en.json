@@ -13,7 +13,7 @@
       { "title": "HOME", "subtitle": "BACK TO", "href": "#" },
       { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "/works" },
       { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "/about" },
-      { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "#process" },
+      { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "/studio" },
       { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "#footer" }
     ]
   },
@@ -261,5 +261,13 @@
         }
       ]
     }
+  },
+  "studioPage": {
+    "subtitle": "THE STUDIO",
+    "title": "Opening Soon",
+    "description": "We are engineering our physical and digital generative art showroom — where algorithms, spatial AI, and golden hand-painted mandalas come together. A sacred geometry experience opening soon in the heart of the city.",
+    "notifyMe": "Notify Me",
+    "backHome": "Back to Home",
+    "emailPlaceholder": "Enter your email"
   }
 }

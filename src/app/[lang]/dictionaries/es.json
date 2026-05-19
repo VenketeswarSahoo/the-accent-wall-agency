@@ -13,7 +13,7 @@
       { "title": "INICIO", "subtitle": "REGRESAR A", "href": "#" },
       { "title": "TRABAJOS", "subtitle": "EXPLORA NUESTRO", "href": "/works" },
       { "title": "NOSOTROS", "subtitle": "CONOCE SOBRE", "href": "/about" },
-      { "title": "ESTUDIO", "subtitle": "VISITA NUESTRO", "href": "#process" },
+      { "title": "ESTUDIO", "subtitle": "VISITA NUESTRO", "href": "/studio" },
       { "title": "CONTACTO", "subtitle": "PONTE EN CONTACTO", "href": "#footer" }
     ]
   },
@@ -261,5 +261,13 @@
         }
       ]
     }
+  },
+  "studioPage": {
+    "subtitle": "EL ESTUDIO",
+    "title": "Apertura Próximamente",
+    "description": "Estamos diseñando nuestra sala de exhibición de arte generativo física y digital: donde los algoritmos, la IA espacial y los mandalas dorados pintados a mano se encuentran. Una experiencia de geometría sagrada próximamente en el corazón de la ciudad.",
+    "notifyMe": "Notificarme",
+    "backHome": "Volver al Inicio",
+    "emailPlaceholder": "Ingresa tu correo"
   }
 }

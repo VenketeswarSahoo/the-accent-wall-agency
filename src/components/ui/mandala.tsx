@@ -1,7 +1,12 @@
 import React from "react";
 
 export interface MandalaProps extends React.SVGProps<SVGSVGElement> {
-  variant: "procedural-1" | "procedural-2" | "mandala-1" | "mandala-2" | "custom";
+  variant:
+    | "procedural-1"
+    | "procedural-2"
+    | "mandala-1"
+    | "mandala-2"
+    | "custom";
   customSvgPath?: string;
   speed?: number;
   reverse?: boolean;
@@ -317,7 +322,8 @@ export const MandalaCustom = ({
         let innerContent = svgContent.substring(innerStart, innerEnd);
         const maskDefs = `<defs><radialGradient id="grad-${uniqueId}" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55" /><stop offset="30%" stop-color="#ffffff" stop-opacity="0.40" /><stop offset="65%" stop-color="#ffffff" stop-opacity="0.18" /><stop offset="85%" stop-color="#ffffff" stop-opacity="0.05" /><stop offset="100%" stop-color="#ffffff" stop-opacity="0" /></radialGradient><mask id="mask-${uniqueId}" maskUnits="userSpaceOnUse" x="0" y="0" width="${viewBoxWidth}" height="${viewBoxHeight}"><circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#grad-${uniqueId})" /></mask></defs>`;
         innerContent = `${maskDefs}<g mask="url(#mask-${uniqueId})">${innerContent}</g>`;
-        svgContent = svgContent.substring(0, innerStart) + innerContent + "</svg>";
+        svgContent =
+          svgContent.substring(0, innerStart) + innerContent + "</svg>";
       }
     }
 
@@ -372,9 +378,16 @@ export default function Mandala({ variant, ...props }: MandalaProps) {
     case "procedural-2":
       return <MandalaProceduralTwo {...props} />;
     case "mandala-1":
-      return <MandalaCustom {...props} customSvgPath="src/assets/Img/mandala1.svg" />;
+      return (
+        <MandalaCustom {...props} customSvgPath="src/assets/Img/mandala1.svg" />
+      );
     case "mandala-2":
-      return <MandalaCustom {...props} customSvgPath="src/assets/Img/mandala-2.svg" />;
+      return (
+        <MandalaCustom
+          {...props}
+          customSvgPath="src/assets/Img/mandala-2.svg"
+        />
+      );
     case "custom":
       return <MandalaCustom {...props} />;
     default:
