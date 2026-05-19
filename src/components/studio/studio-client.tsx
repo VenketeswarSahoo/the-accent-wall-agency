@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { Loader2 } from "lucide-react";
 
 interface StudioClientProps {
   dict: any;
@@ -17,12 +18,32 @@ export default function StudioClient({
 }: StudioClientProps) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
+    if (!email) return;
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setSubscribed(true);
+        setEmail("");
+      } else {
+        const data = await res.json();
+        alert(data.error || "Something went wrong.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to submit. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -68,14 +89,17 @@ export default function StudioClient({
                 type="email"
                 required
                 value={email}
+                disabled={loading}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={studioPageDict.emailPlaceholder}
-                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-white/20"
+                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-white/20 disabled:opacity-50"
               />
               <button
                 type="submit"
-                className="bg-primary hover:bg-primary/95 text-black font-semibold text-sm px-6 py-3 rounded-lg transition-colors cursor-pointer shadow-lg shadow-primary/10"
+                disabled={loading}
+                className="bg-primary hover:bg-primary/95 text-black font-semibold text-sm px-6 py-3 rounded-lg transition-colors cursor-pointer shadow-lg shadow-primary/10 flex items-center justify-center gap-2 disabled:opacity-75"
               >
+                {loading && <Loader2 className="size-4 animate-spin" />}
                 {studioPageDict.notifyMe}
               </button>
             </form>

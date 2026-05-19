@@ -4,6 +4,7 @@ import Mandala from "@/components/ui/mandala";
 import Link from "next/link";
 import Image from "next/image";
 import { LogoIcon } from "@/assets";
+import NewsletterForm from "./newsletter-form";
 
 interface FooterProps {
   dict: any;
@@ -139,19 +140,10 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
               </p>
             </div>
 
-            <div className="flex items-center w-full lg:w-auto gap-2 p-2 bg-white/5 border border-white/10 rounded-full focus-within:border-primary/50 transition-colors">
-              <div className="pl-4 text-white/20">
-                <Mail className="size-4" />
-              </div>
-              <input
-                type="email"
-                placeholder={dict?.footer?.newsletterPlaceholder}
-                className="bg-transparent border-none outline-none text-white text-sm w-full lg:w-64 placeholder:text-white/20"
-              />
-              <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all duration-300">
-                {dict?.footer?.subscribe}
-              </button>
-            </div>
+            <NewsletterForm
+              placeholder={dict?.footer?.newsletterPlaceholder}
+              buttonText={dict?.footer?.subscribe}
+            />
           </div>
 
           {/* Middle: Links */}
