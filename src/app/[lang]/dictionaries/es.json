@@ -14,7 +14,7 @@
       { "title": "TRABAJOS", "subtitle": "EXPLORA NUESTRO", "href": "/works" },
       { "title": "NOSOTROS", "subtitle": "CONOCE SOBRE", "href": "/about" },
       { "title": "ESTUDIO", "subtitle": "VISITA NUESTRO", "href": "/studio" },
-      { "title": "CONTACTO", "subtitle": "PONTE EN CONTACTO", "href": "#footer" }
+      { "title": "CONTACTO", "subtitle": "PONTE EN CONTACTO", "href": "/contact" }
     ]
   },
   "partners": {
@@ -269,5 +269,34 @@
     "notifyMe": "Notificarme",
     "backHome": "Volver al Inicio",
     "emailPlaceholder": "Ingresa tu correo"
+  },
+  "contactPage": {
+    "subtitle": "PONTE EN CONTACTO",
+    "title": "Alineemos tu espacio",
+    "description": "¿Tienes un proyecto de mural de pared a medida o una solicitud de diseño de espacio? Ponte en contacto a través de nuestros canales directos o déjanos un mensaje con el formulario de consulta algorítmica de abajo.",
+    "directChannelsTitle": "Canales Directos",
+    "directChannelsSubtitle": "La forma más fácil de iniciar una conversación.",
+    "whatsappLabel": "Chat de WhatsApp",
+    "whatsappSub": "Respuesta instantánea. Ideal para detalles rápidos.",
+    "whatsappText": "Chatea en WhatsApp",
+    "instagramLabel": "Instagram DM",
+    "instagramSub": "Envíanos fotos de tu espacio.",
+    "instagramText": "Enviar Mensaje",
+    "emailLabel": "Correo Directo",
+    "emailSub": "Para arquitectos, diseñadores de interiores y curadores.",
+    "emailText": "sahoovenketeswar@gmail.com",
+    "formTitle": "Resumen de Proyecto Algorítmico",
+    "formSubtitle": "Cuéntanos sobre tu espacio. Lo mapearemos.",
+    "fieldName": "Tu Nombre",
+    "fieldEmail": "Tu Correo",
+    "fieldPhone": "Teléfono (Opcional)",
+    "fieldSpace": "Tipo de Espacio",
+    "fieldSpacePlaceholder": "ej., Sala de Estar, Centro de Bienestar, Vestíbulo de Hotel",
+    "fieldDimensions": "Dimensiones de la Pared (Opcional)",
+    "fieldDimensionsPlaceholder": "ej., 4m x 3m",
+    "fieldMessage": "Vibra y Detalles del Proyecto",
+    "fieldMessagePlaceholder": "Describe la energía o el estilo que buscas...",
+    "submitButton": "Transmitir Resumen",
+    "successMessage": "¡Resumen transmitido con éxito! Nuestro diseñador-IA está analizando tu espacio."
   }
 }

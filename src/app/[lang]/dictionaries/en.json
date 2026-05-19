@@ -14,7 +14,7 @@
       { "title": "WORKS", "subtitle": "EXPLORE OUR", "href": "/works" },
       { "title": "ABOUT", "subtitle": "LEARN ABOUT", "href": "/about" },
       { "title": "STUDIO", "subtitle": "VISIT OUR", "href": "/studio" },
-      { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "#footer" }
+      { "title": "CONTACT", "subtitle": "GET IN TOUCH", "href": "/contact" }
     ]
   },
   "partners": {
@@ -269,5 +269,34 @@
     "notifyMe": "Notify Me",
     "backHome": "Back to Home",
     "emailPlaceholder": "Enter your email"
+  },
+  "contactPage": {
+    "subtitle": "GET IN TOUCH",
+    "title": "Let's align your space",
+    "description": "Have a custom wall mural project or space design request? Get in touch using our direct channels or drop a message via the algorithmic inquiry form below.",
+    "directChannelsTitle": "Direct Channels",
+    "directChannelsSubtitle": "The easiest way to start a conversation.",
+    "whatsappLabel": "WhatsApp Chat",
+    "whatsappSub": "Instant response. Best for quick details.",
+    "whatsappText": "Chat on WhatsApp",
+    "instagramLabel": "Instagram DM",
+    "instagramSub": "Send us photos of your space.",
+    "instagramText": "Send a Message",
+    "emailLabel": "Direct Email",
+    "emailSub": "For architects, interior designers & curators.",
+    "emailText": "sahoovenketeswar@gmail.com",
+    "formTitle": "Algorithmic Project Brief",
+    "formSubtitle": "Tell us about your space. We'll map it.",
+    "fieldName": "Your Name",
+    "fieldEmail": "Your Email",
+    "fieldPhone": "Phone (Optional)",
+    "fieldSpace": "Space Type",
+    "fieldSpacePlaceholder": "e.g., Living Room, Wellness Center, Hotel Lobby",
+    "fieldDimensions": "Wall Dimensions (Optional)",
+    "fieldDimensionsPlaceholder": "e.g., 4m x 3m",
+    "fieldMessage": "Project Vibe & Details",
+    "fieldMessagePlaceholder": "Describe the energy or styling you want...",
+    "submitButton": "Transmit Brief",
+    "successMessage": "Brief transmitted successfully! Our AI-designer is analyzing your space."
   }
 }

@@ -29,7 +29,7 @@ const CTASection = ({ dict, lang = "en" }: CTASectionProps) => {
               {dict?.cta?.description}
             </p>
             <Link
-              href={`/${lang}/coming-soon`}
+              href={`/${lang}/contact`}
               className="group w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-md hover:bg-primary hover:text-white transition-all duration-300"
             >
               {dict?.cta?.buttonText}
