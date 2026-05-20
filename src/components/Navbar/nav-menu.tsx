@@ -77,7 +77,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
             className="hidden lg:flex lg:w-1/2 h-full bg-[#0a0a0a] pointer-events-auto flex-col justify-between p-6 sm:p-8 lg:p-12 relative z-20"
           >
             <div className="flex flex-col gap-6 lg:mt-auto">
-              <h4 className="text-xs uppercase tracking-widest text-white/40 mb-2">
+              <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 {dict?.navigation?.connect}
               </h4>
               <ul className="flex flex-col gap-4 text-sm">
@@ -86,7 +86,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                     href="https://www.instagram.com/the_venketesh/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex hover:text-white text-white/40 transition-colors w-max group"
+                    className="flex hover:text-white text-muted-foreground transition-colors w-max group"
                   >
                     <span className="w-24 group-hover:text-white flex items-center gap-2">
                       <svg
@@ -114,7 +114,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       Instagram
                     </span>
-                    <span className="text-white/40">@the_venketesh</span>
+                    <span className="text-muted-foreground">@the_venketesh</span>
                   </a>
                 </li>
                 <li>
@@ -122,7 +122,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                     href="https://x.com/Venkatesh_5o2"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex hover:text-white text-white/40 transition-colors w-max group"
+                    className="flex hover:text-white text-muted-foreground transition-colors w-max group"
                   >
                     <span className="w-24 group-hover:text-white flex items-center gap-2">
                       <svg
@@ -141,7 +141,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       Twitter
                     </span>
-                    <span className="text-white/40">@Venkatesh_5o2</span>
+                    <span className="text-muted-foreground">@Venkatesh_5o2</span>
                   </a>
                 </li>
                 <li>
@@ -149,7 +149,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                     href="https://wa.me/919861949459"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex hover:text-white text-white/40 transition-colors w-max group"
+                    className="flex hover:text-white text-muted-foreground transition-colors w-max group"
                   >
                     <span className="w-24 group-hover:text-white flex items-center gap-2">
                       <svg
@@ -168,7 +168,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       WhatsApp
                     </span>
-                    <span className="text-white/40">+91 9861949459</span>
+                    <span className="text-muted-foreground">+91 9861949459</span>
                   </a>
                 </li>
                 <li>
@@ -176,7 +176,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                     href="https://www.linkedin.com/in/venketeswar-sahoo/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex hover:text-white text-white/40 transition-colors w-max group"
+                    className="flex hover:text-white text-muted-foreground transition-colors w-max group"
                   >
                     <span className="w-24 group-hover:text-white flex items-center gap-2">
                       <svg
@@ -197,18 +197,18 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       LinkedIn
                     </span>
-                    <span className="text-white/40">Venketeswar Sahoo</span>
+                    <span className="text-muted-foreground">Venketeswar Sahoo</span>
                   </a>
                 </li>
                 <li>
                   <a
                     href="mailto:sahoovenketeswar@gmail.com"
-                    className="flex hover:text-white text-white/40 transition-colors w-max group"
+                    className="flex hover:text-white text-muted-foreground transition-colors w-max group"
                   >
                     <span className="w-24 group-hover:text-white flex items-center gap-2">
                       <Mail className="size-4" /> Email
                     </span>
-                    <span className="text-white/40">
+                    <span className="text-muted-foreground">
                       sahoovenketeswar@gmail.com
                     </span>
                   </a>
@@ -243,7 +243,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
 
                     <div className="flex items-center justify-between relative z-10 w-full">
                       <div className="flex flex-col">
-                        <span className="text-[0.65rem] tracking-[0.2em] text-white/40 uppercase mb-2 transition-colors group-hover:text-white/80">
+                        <span className="text-[0.65rem] tracking-[0.2em] text-muted-foreground uppercase mb-2 transition-colors group-hover:text-white/80">
                           {item.subtitle}
                         </span>
                         <span className="text-5xl lg:text-6xl font-bold text-white transition-transform duration-500 ease-out group-hover:translate-x-6">
@@ -259,7 +259,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
             </div>
 
             {/* Menu Footer */}
-            <div className="lg:px-20 px-8 lg:py-4 py-2 border-t border-white/5 flex items-center justify-between text-[0.65rem] text-white/40 uppercase tracking-widest relative z-10 w-full">
+            <div className="lg:px-20 px-8 lg:py-4 py-2 border-t border-white/5 flex items-center justify-between text-[0.65rem] text-muted-foreground uppercase tracking-widest relative z-10 w-full">
               <a
                 href="mailto:sahoovenketeswar@gmail.com"
                 className="hover:text-white transition-colors"

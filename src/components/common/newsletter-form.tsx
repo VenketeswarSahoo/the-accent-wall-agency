@@ -54,7 +54,7 @@ export default function NewsletterForm({ placeholder, buttonText }: NewsletterFo
       onSubmit={handleSubmit}
       className="flex items-center w-full lg:w-auto gap-2 p-2 bg-white/5 border border-white/10 rounded-full focus-within:border-primary/50 transition-colors"
     >
-      <div className="pl-4 text-white/20">
+      <div className="pl-4 text-muted-foreground">
         <Mail className="size-4" />
       </div>
       <input
@@ -69,7 +69,7 @@ export default function NewsletterForm({ placeholder, buttonText }: NewsletterFo
       <button
         type="submit"
         disabled={loading}
-        className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+        className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
       >
         {loading && <Loader2 className="size-3.5 animate-spin" />}
         {buttonText}

@@ -124,7 +124,7 @@ const PartnerSection = ({ dict }: PartnerSectionProps) => {
             <div key={i} className="flex items-center gap-12 px-6">
               {services.map((service, index) => (
                 <React.Fragment key={index}>
-                  <span className="text-2xl md:text-3xl text-white/20 hover:text-white transition-colors cursor-default tracking-tight">
+                  <span className="text-2xl md:text-3xl text-muted-foreground hover:text-white transition-colors cursor-default tracking-tight">
                     {service}
                   </span>
                   <span className="text-primary text-2xl md:text-7xl opacity-40 -mt-3">

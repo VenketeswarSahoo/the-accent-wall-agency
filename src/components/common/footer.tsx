@@ -203,7 +203,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-6">
-              <span className="text-[10px] text-white/30 uppercase">
+              <span className="text-[10px] text-muted-foreground uppercase">
                 {dict?.footer?.contactHeader}
               </span>
               <ul className="flex flex-col gap-4">

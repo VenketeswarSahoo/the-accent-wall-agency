@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: PageProps) {
               <span className="text-xs md:text-sm font-medium text-muted-foreground uppercase">
                 {aboutPageDict.subtitle}
               </span>
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-[1.05] lg:leading-[1] xl:leading-[0.95] tracking-tight max-w-4xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.1] lg:leading-[1] xl:leading-[0.9] tracking-tight">
                 <span className="block">{aboutPageDict.titleLine1}</span>
                 <span className="block text-primary">
                   {aboutPageDict.titleLine2}

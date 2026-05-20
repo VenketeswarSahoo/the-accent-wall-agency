@@ -32,12 +32,12 @@ export default async function Hero({ params }: PageProps) {
       {/* Decorative Rotating Sacred Geometry Mandalas */}
       <Mandala
         variant="mandala-2"
-        className="absolute top-[-25%] left-[-20%] w-[85vw] h-[85vw] max-w-[1000px] max-h-[1000px] text-primary/25 pointer-events-none mix-blend-screen select-none z-0"
+        className="absolute top-[-10vw] left-[-15vw] w-[80vw] h-[80vw] md:top-[-25%] md:left-[-20%] md:w-[85vw] md:h-[85vw] max-w-[1000px] max-h-[1000px] text-primary/25 pointer-events-none mix-blend-screen select-none z-0"
         speed={300}
       />
       <Mandala
         variant="mandala-1"
-        className="absolute bottom-[-15%] right-[-10%] w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] text-primary/22 pointer-events-none mix-blend-screen select-none z-0"
+        className="absolute bottom-[-10vw] right-[-10vw] w-[50vw] h-[50vw] md:bottom-[-15%] md:right-[-10%] md:w-[55vw] md:h-[55vw] max-w-[600px] max-h-[600px] text-primary/22 pointer-events-none mix-blend-screen select-none z-0"
         speed={250}
         reverse
       />
@@ -59,7 +59,7 @@ export default async function Hero({ params }: PageProps) {
 
             <div className="lg:col-span-5 xl:col-span-4 flex flex-col gap-8 lg:gap-10">
               <div className="flex flex-col gap-6 lg:gap-8">
-                <p className="text-base lg:text-lg text-white/40 max-w-[1440px]">
+                <p className="text-base lg:text-lg text-muted-foreground max-w-[1440px]">
                   {dict.description}
                 </p>
 
@@ -71,7 +71,7 @@ export default async function Hero({ params }: PageProps) {
       </Section>
       <div className="relative w-full z-10">
         <div className="border-y border-white/20 py-4 w-full">
-          <p className="text-white/40 max-w-[1440px] mx-auto px-6 lg:px-12 2xl:px-0 uppercase text-sm text-center lg:text-left leading-relaxed">
+          <p className="text-muted-foreground max-w-[1440px] mx-auto px-6 lg:px-12 2xl:px-0 uppercase text-sm text-center lg:text-left leading-relaxed">
             {dict.techStack}
           </p>
         </div>
