@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: PageProps) {
   const isEs = lang === "es";
   return {
     title: isEs
-      ? "Próximamente | The Circle Company"
-      : "Coming Soon | The Circle Company",
+      ? "Próximamente | The Accent Wall Agency"
+      : "Coming Soon | The Accent Wall Agency",
     description: isEs
       ? "Nuevos e inspiradores proyectos de geometría sagrada y arte mural en curso."
       : "New inspiring spatial design, sacred geometry murals and installations coming soon.",

@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: PageProps) {
   const isEs = lang === "es";
   return {
     title: isEs
-      ? "Nuestro Trabajo | The Circle Company"
-      : "Our Work | The Circle Company",
+      ? "Nuestro Trabajo | The Accent Wall Agency"
+      : "Our Work | The Accent Wall Agency",
     description: isEs
       ? "Explore nuestra colección curada de murales de geometría sagrada y mandalas diseñados por IA y pintados a mano."
       : "Explore our curated collection of bespoke hand-painted AI-engineered sacred geometry mandalas and spatial murals.",
