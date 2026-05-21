@@ -79,7 +79,7 @@ export default function SoonCard({ dict, lang }: SoonCardProps) {
             <motion.div
               key={idx}
               className={cn(
-                "absolute px-3.5 py-1.5 rounded-full border border-white/5 bg-[#121212]/50 text-[0.55rem] md:text-[0.625rem] font-bold tracking-widest text-white/35 uppercase select-none shadow-sm transition-all duration-500 ease-out",
+                "absolute px-3.5 py-1.5 rounded-full border border-white/5 bg-[#121212]/50 text-[0.55rem] md:text-[0.625rem] font-bold tracking-widest text-muted-foreground uppercase select-none shadow-sm transition-all duration-500 ease-out",
                 placement.className,
               )}
               animate={{
@@ -114,7 +114,7 @@ export default function SoonCard({ dict, lang }: SoonCardProps) {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
-        <span className="text-[0.55rem] md:text-[0.6rem] font-bold tracking-widest text-white/40 uppercase">
+        <span className="text-[0.55rem] md:text-[0.6rem] font-bold tracking-widest text-muted-foreground uppercase">
           {labelText}
         </span>
       </div>

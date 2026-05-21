@@ -159,7 +159,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
+                        strokeWidth="0.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         className="size-4 fill-current"

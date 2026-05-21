@@ -1,7 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
-import Mandala from "@/components/ui/mandala";
 import WorksFilterWrapper from "@/components/Work/works-filter-wrapper";
 
 interface PageProps {
