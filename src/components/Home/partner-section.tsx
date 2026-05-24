@@ -49,7 +49,7 @@ const PartnerSection = ({ dict }: PartnerSectionProps) => {
 
   return (
     <Section py="py-12 lg:py-32">
-      <div className="relative w-full bg-primary overflow-hidden min-h-[180px] flex items-center p-10 lg:p-16">
+      <div className="relative w-full bg-primary overflow-hidden min-h-[180px] flex items-center p-10 lg:p-16 selection:bg-white selection:text-primary-foreground">
 
         <div className="relative z-10 max-w-3xl">
           <h2 className="text-3xl lg:text-4xl text-white mb-4">

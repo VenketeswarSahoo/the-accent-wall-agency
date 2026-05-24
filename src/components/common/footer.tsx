@@ -113,18 +113,18 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
 
         <Mandala
           variant="mandala-1"
-          className="absolute top-[-12%] left-[-12%] w-[350px] h-[350px] text-primary/20 pointer-events-none select-none z-0"
+          className="hidden lg:block absolute top-[-12%] left-[-12%] w-[350px] h-[350px] text-primary/20 pointer-events-none select-none z-0"
           speed={250}
         />
         <Mandala
           variant="mandala-1"
-          className="absolute bottom-[-12%] right-[-12%] w-[350px] h-[350px] text-primary/20 pointer-events-none select-none z-0"
+          className="hidden lg:block absolute bottom-[-12%] right-[-12%] w-[350px] h-[350px] text-primary/20 pointer-events-none select-none z-0"
           speed={250}
           reverse
         />
         <Mandala
           variant="mandala-2"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[1300px] h-[1300px] text-primary/12 pointer-events-none select-none z-0"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] lg:w-[1300px] lg:h-[1300px] text-primary/12 pointer-events-none select-none z-0"
           speed={500}
         />
 

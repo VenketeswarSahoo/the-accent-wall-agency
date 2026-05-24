@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "my-app",
+      "name": "the-accent-wall-agency",
       "dependencies": {
         "@base-ui/react": "^1.4.0",
         "@formatjs/intl-localematcher": "^0.8.3",

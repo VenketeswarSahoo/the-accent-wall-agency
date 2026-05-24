@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
+import { Loader2, Sparkles, ArrowRight } from "lucide-react";
 
 interface StudioClientProps {
   dict: any;
@@ -67,6 +67,18 @@ export default function StudioClient({
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-6xl">
           {studioPageDict.description}
         </p>
+
+        {/* Try Live Visualizer CTA */}
+        <Link
+          href={`/${lang}/studio/editor`}
+          className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-black font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 flex items-center gap-2 group cursor-pointer"
+        >
+          <Sparkles className="size-4 group-hover:scale-125 transition-transform" />
+          {lang === "es"
+            ? "Probar Visualizador Espacial de IA (Beta)"
+            : "Try AI Spatial Visualizer (Beta)"}
+          <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
 
         {/* Dynamic Interactive Action - Notify Me */}
         <div className="w-full max-w-md mt-4">
