@@ -6,35 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**.fbcdn.net",
-      },
-      {
-        protocol: "https",
-        hostname: "**.instagram.com",
-      },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
         hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "i.pinimg.com",
-      },
-      {
-        protocol: "https",
-        hostname: "i1-e.pinimg.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.magicdecor.in",
-      },
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
       },
       {
         protocol: "https",
