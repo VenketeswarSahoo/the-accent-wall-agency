@@ -40,7 +40,7 @@ const AboutSection = ({ dict }: AboutSectionProps) => {
         speed={500}
       />
 
-      <h2 className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-medium text-white max-w-[62rem] mb-24 lg:mb-32 leading-tight">
+      <h2 className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-medium text-white max-w-[62rem] mb-24 lg:mb-32 leading-tight mt-20">
         {parts[0]}
         <span className="text-primary italic">{highlightWord}</span>
         {parts[1]}
