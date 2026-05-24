@@ -1,4 +1,3 @@
-export { default as Logo } from "./Img/Logo.svg";
 export { default as LogoIcon } from "./Img/logo-icon.svg";
 export { default as partner1 } from "./Img/partner1.png";
 export { default as partner2 } from "./Img/partner2.png";
