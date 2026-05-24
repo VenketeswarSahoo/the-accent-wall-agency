@@ -3,6 +3,7 @@ import SectionHeader from "@/components/ui/section-header";
 import ArrowLink from "@/components/ui/arrow-link";
 import Section from "../ui/section";
 import ProjectCard from "./project-card";
+import * as Mandalas from "@/assets";
 
 interface WorkSectionProps {
   dict: any;
@@ -16,7 +17,7 @@ interface WorkSectionProps {
 interface Project {
   title: string;
   categories: string;
-  image: string;
+  image: any;
   isFeatured?: boolean;
 }
 
@@ -29,10 +30,20 @@ const WorkSection = ({
   hideFooterLink = false,
 }: WorkSectionProps) => {
   const localizedProjects = (dict?.work?.projects || []) as Project[];
-  const projects: Project[] = localizedProjects.map((p) => ({
-    ...p,
-    isFeatured: false,
-  }));
+  const projects: Project[] = localizedProjects.map((p) => {
+    let resolvedImage = p.image;
+    if (typeof p.image === "string" && p.image.startsWith("mandala")) {
+      const imgKey = p.image as keyof typeof Mandalas;
+      if (Mandalas[imgKey]) {
+        resolvedImage = Mandalas[imgKey];
+      }
+    }
+    return {
+      ...p,
+      image: resolvedImage,
+      isFeatured: false,
+    };
+  });
 
   const matchesCategory = (
     categoriesStr: string,
