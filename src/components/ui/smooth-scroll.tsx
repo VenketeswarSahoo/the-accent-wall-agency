@@ -1,0 +1,57 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
+import { usePathname } from "next/navigation";
+
+export default function SmoothScroll() {
+  const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    // Save the original scroll-behavior of the html element
+    const html = document.documentElement;
+    const originalScrollBehavior = html.style.scrollBehavior;
+
+    // Temporarily override to 'auto' to prevent conflicts/stuttering with Lenis
+    html.style.scrollBehavior = "auto";
+
+    // Initialize Lenis with custom options for smooth momentum scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth ease-out expo
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+
+    // Request Animation Frame loop to drive Lenis scrolling
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    // Clean up on unmount
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      lenisRef.current = null;
+
+      // Restore original scroll behavior
+      html.style.scrollBehavior = originalScrollBehavior;
+    };
+  }, []);
+
+  // Immediately reset scroll position to top when pathname changes
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  }, [pathname]);
+
+  return null;
+}

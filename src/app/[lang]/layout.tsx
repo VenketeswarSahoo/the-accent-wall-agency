@@ -7,6 +7,7 @@ import { haffer } from "../fonts";
 import { getDictionary, Locale } from "@/app/[lang]/dictionaries";
 import HomeClient from "@/components/common/home-client";
 import Footer from "@/components/common/footer";
+import SmoothScroll from "../../components/ui/smooth-scroll";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -114,7 +115,7 @@ export default async function RootLayout({
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  
+
   return (
     <html
       lang={lang}
@@ -128,10 +129,9 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-black">
         <TooltipProvider>
+          <SmoothScroll />
           <HomeClient dict={dict} lang={lang} />
-          <div className="flex-1 flex flex-col w-full">
-            {children}
-          </div>
+          <div className="flex-1 flex flex-col w-full">{children}</div>
           <Footer dict={dict} lang={lang} />
         </TooltipProvider>
       </body>
