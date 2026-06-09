@@ -31,12 +31,24 @@ export default async function StudioPage({ params }: PageProps) {
   const dict = await getDictionary(lang as Locale);
 
   return (
-    <StudioClient dict={dict} lang={lang}>
-      <Mandala
-        variant="mandala-2"
-        className="w-[90vw] h-[90vw] max-w-[900px] max-h-[900px] text-primary/25"
-        speed={400}
-      />
-    </StudioClient>
+    <StudioClient
+      dict={dict}
+      lang={lang}
+      bgMandalas={
+        <>
+          <Mandala
+            variant="mandala-2"
+            className="absolute top-[-10vw] left-[-15vw] w-[80vw] h-[80vw] md:top-[-25%] md:left-[-20%] md:w-[85vw] md:h-[85vw] max-w-[1000px] max-h-[1000px] text-primary/25 pointer-events-none mix-blend-screen select-none z-0"
+            speed={300}
+          />
+          <Mandala
+            variant="mandala-1"
+            className="absolute bottom-[-10vw] right-[-10vw] w-[50vw] h-[50vw] md:bottom-[-15%] md:right-[-10%] md:w-[55vw] md:h-[55vw] max-w-[600px] max-h-[600px] text-primary/22 pointer-events-none mix-blend-screen select-none z-0"
+            speed={250}
+            reverse
+          />
+        </>
+      }
+    />
   );
 }
