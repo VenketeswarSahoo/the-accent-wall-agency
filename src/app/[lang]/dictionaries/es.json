@@ -1,13 +1,13 @@
 {
   "firstLine": "Diseñado con IA. Pintado a Mano.",
   "secondLine": "Paredes Impecables.",
-  "description": "Deja de mirar paneles de yeso en blanco. Usamos diseño generativo avanzado para proyectar mandalas asombrosos y matemáticamente perfectos en tu espacio, cobrados vida completamente a mano por maestros artistas locales.",
-  "shipProduct": "Transforma Tu Espacio",
-  "techStack": "Precisión de IA · Alma Humana · Mandalas para Sala de Estar · Branding Espacial Comercial · Vistas Previas sin Dudas · Arte Fino Lavable",
+  "description": "Deja de vivir con paredes vacías. Usamos IA generativa avanzada para diseñar mandalas de geometría sagrada matemáticamente perfectos — y luego les damos vida completamente a mano, por maestros artistas, directamente sobre tu pared.",
+  "shipProduct": "Transforma Mi Espacio",
+  "techStack": "Precisión de IA · Alma Humana · Mandalas para Sala de Estar · Geometría Sagrada · Acabados de Pan de Oro · Vistas Previas sin Conjeturas",
   "navigation": {
     "home": "Inicio",
     "map": "Mapa",
-    "demo": "Demostración",
+    "demo": "Demo",
     "connect": "Conectar",
     "menu": [
       { "title": "INICIO", "subtitle": "REGRESAR A", "href": "#" },
@@ -18,43 +18,43 @@
     ]
   },
   "partners": {
-    "title": "Nos asociamos con arquitectos, diseñadores de interiores y curadores.",
-    "subtitle": "Ayudamos a armonizar, diseñar e instalar.",
+    "title": "Nos asociamos con arquitectos, diseñadores de interiores y propietarios visionarios.",
+    "subtitle": "Diseñamos, alineamos e instalamos — desde el primer informe hasta la última pincelada.",
     "services": [
       "Murales Pintados a Mano",
       "Pan de Oro Metálico",
       "Geometría Sagrada",
-      "Arte de Pared a Medida",
-      "Visuales de IA Espacial"
+      "Arte de Pared Personalizado",
+      "Previsualizaciones Espaciales de IA"
     ]
   },
   "about": {
     "title": "Sobre Nosotros",
-    "headline": "No somos un estudio de arte tradicional. Somos una agencia premium donde ingenieros y maestros artistas utilizan IA Generativa para diseñar mandalas de geometría sagrada matemáticamente perfectos, ejecutándolos a mano directamente sobre tus paredes con una precisión impecable.",
+    "headline": "No somos un estudio de arte tradicional. Somos una agencia premium donde ingenieros y artistas maestros combinan la IA Generativa con la antigua geometría sagrada, y la ejecutan directamente en tus paredes, completamente a mano, con absoluta precisión.",
     "stats": [
       {
         "value1": 100,
         "text": "%",
         "label": "Detalle Pintado a Mano",
-        "description": "Cada mandala se dibuja y pinta a mano directamente en tu pared, integrando pan de oro puro y ricas texturas metálicas."
+        "description": "Cada mandala se dibuja y pinta a mano — directamente en tu pared — con pan de oro puro y ricas texturas metálicas tejidas en cada línea."
       },
       {
         "value1": 10,
         "text": "seg",
-        "label": "Renderizado Espacial de IA",
-        "description": "Sube una foto de tu pared, elige una referencia y mira la geometría sagrada personalizada pintada en tu pared en segundos."
+        "label": "Previsualización Espacial de IA",
+        "description": "Sube una foto de tu pared. Elige una referencia. Mira tu geometría sagrada personalizada renderizada en tu espacio real en segundos — antes de que nada se plasme en tu pared."
       },
       {
         "value1": 120,
         "text": "+",
-        "label": "Murales a Medida",
-        "description": "Murales pintados por encargo que embellecen residencias de lujo, retiros de bienestar y hoteles en todo el mundo."
+        "label": "Murales Personalizados",
+        "description": "Murales de pared por encargo que transforman residencias de lujo, retiros de bienestar, hoteles y espacios sagrados en todo el mundo."
       }
     ]
   },
   "work": {
     "title": "Trabajos Seleccionados",
-    "subtitle": "Instalaciones a Medida",
+    "subtitle": "Instalaciones Personalizadas",
     "linkText": "Ver todos los proyectos",
     "worksPage": {
       "subtitle": "TRABAJO SELECCIONADO",
@@ -62,7 +62,7 @@
       "project": "Proyecto",
       "projects": "Proyectos",
       "soon": "PRÓXIMAMENTE",
-      "moreProjects": "MÁS PROYECTOS EN CURSO",
+      "moreProjects": "Más obras maestras en progreso. Mantente cerca.",
       "soonBadges": [
         "ARTE MURAL",
         "GEOMETRÍA SAGRADA",
@@ -83,7 +83,7 @@
     "projects": [
       {
         "title": "LA PROPORCIÓN ÁUREA",
-        "categories": "Mural Pintado a Medida, Geometría Sagrada, Detalles Metálicos Pintados a Mano",
+        "categories": "Mural Pintado Personalizado, Geometría Sagrada, Detalles Metálicos Pintados a Mano",
         "image": "mandala10"
       },
       {
@@ -98,7 +98,7 @@
       },
       {
         "title": "PORTAL SRI YANTRA",
-        "categories": "Mural Pintado a Medida, Geometría Sagrada, Detalles Metálicos Pintados a Mano",
+        "categories": "Mural Pintado Personalizado, Geometría Sagrada, Detalles Metálicos Pintados a Mano",
         "image": "mandala4"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "title": "MANDALA DEL PLEXO SOLAR",
-        "categories": "Mural Pintado a Medida, Detalles Metálicos Pintados a Mano",
+        "categories": "Mural Pintado Personalizado, Detalles Metálicos Pintados a Mano",
         "image": "mandala8"
       },
       {
@@ -130,96 +130,96 @@
   },
   "services": {
     "title": "Servicios",
-    "subtitle": "De bocetos vectoriales a instalaciones de pared arquitectónicas.",
+    "subtitle": "Desde el primer boceto hasta la última pincelada en tu pared.",
     "scrollText": "Desliza para explorar",
     "exploreText": "Explorar",
-    "description": "Murales pintados a mano a la medida, texturas de pan de oro, diseño de geometría sagrada y vistas previas instantáneas de paredes con IA. Todo está matemáticamente alineado, diseñado internamente y pintado con precisión experta.",
+    "description": "Murales personalizados pintados a mano, texturas de pan de oro puro, diseño de geometría sagrada y vistas previas instantáneas de paredes con IA. Cada composición está matemáticamente alineada, diseñada internamente y cobrada vida con precisión de nivel maestro.",
     "list": [
       {
         "number": "01",
-        "title": "Conceptualización a Medida",
-        "description": "Diseños geométricos personalizados diseñados para tu espacio. Simbolismo tradicional, filigrana floral y parámetros de estilo personalizados."
+        "title": "Conceptualización Personalizada",
+        "description": "Diseñamos una distribución geométrica a medida basada en tu espacio, tu historia y tu estética. Simbolismo sagrado tradicional, filigrana floral y estilo personalizado — todo diseñado completamente para ti."
       },
       {
         "number": "02",
         "title": "Prototipado en Vivo de la Habitación",
-        "description": "Sube una foto de tu pared vacía. Nuestro software de mapeo de perspectivas superpone el mandala digital en tu habitación para que veas el resultado final al instante."
+        "description": "Sube una foto de tu pared. Nuestro software de mapeo espacial superpone el diseño de mandala elegido directamente en tu habitación, para que veas exactamente cómo se verá la obra final antes de que un solo pincel toque tu pared."
       },
       {
         "number": "03",
         "title": "Generación Impulsada por IA",
-        "description": "Utilizamos modelos generativos de última generación para iterar instantáneamente a través de infinitas variaciones de complejidad, líneas finas y puntillismo."
+        "description": "Nuestros modelos generativos crean instantáneamente infinitas variaciones de complejidad, líneas finas y puntillismo, hasta que encontramos la composición que se siente completamente adecuada para tu espacio."
       },
       {
         "number": "04",
         "title": "Pintura a Mano Premium",
-        "description": "Nuestra red seleccionada de pintores maestros locales interpreta el plano digital en una obra maestra orgánica pintada a mano con acrílicos lavables."
+        "description": "Nuestra red seleccionada de maestros pintores toma el plano digital y lo interpreta en una obra maestra viva y orgánica — a mano alzada, en el sitio, utilizando acrílicos lavables premium y pan de oro."
       },
       {
         "number": "05",
         "title": "Acabados de Textura y Metálicos",
-        "description": "Eleva la obra de arte con pan de oro de primera calidad, texturizado estructural o pinturas metálicas que capturan la luz maravillosamente."
+        "description": "Eleva aún más tu obra de arte con pan de oro puro, capas de textura estructural o lacas metálicas que cambian y brillan hermosamente a medida que la luz se mueve por tu espacio."
       },
       {
         "number": "06",
         "title": "Escalado de Espacios Comerciales",
-        "description": "Visuales de marca personalizados y de alto impacto para cafeterías, vestíbulos de hoteles, fondos corporativos y centros de bienestar modernos."
+        "description": "Instalaciones de geometría sagrada de alto impacto para cafeterías, vestíbulos de hoteles, centros de bienestar, espacios corporativos y cualquier lugar que merezca una declaración que simplemente no se pueda replicar."
       }
     ]
   },
   "process": {
     "title": "Cómo Trabajamos",
-    "headline": "De resumen a obra maestra en semanas.",
-    "description": "Un viaje artístico preciso y guiado por las matemáticas. Combinando análisis espacial avanzado con artesanía meticulosa.",
+    "headline": "De tu informe a tu obra maestra — en semanas, no en meses.",
+    "description": "Un viaje artístico preciso y guiado por la intención. La inteligencia espacial avanzada se encuentra con la meticulosa artesanía humana en cada paso.",
     "list": [
       {
         "number": "01",
         "title": "Alineación",
-        "description": "Un breve resumen para definir el tema, las opciones de color y las medidas exactas de la pared."
+        "description": "Un informe enfocado. Definimos tu tema, paleta de colores, estilo de mandala y dimensiones exactas de la pared. Sin conjeturas — solo claridad e intención desde el primer día."
       },
       {
         "number": "02",
         "title": "Sprint de Diseño de IA",
-        "description": "Nuestro motor genera maquetas de mandalas altamente detalladas superpuestas sobre fotos de tu habitación real en días, eliminando toda conjetura."
+        "description": "Nuestro motor genera composiciones de mandalas ricamente detalladas mapeadas directamente sobre fotos de tu habitación real, para que puedas ver y sentir el resultado final antes de que nada se aplique a tu pared."
       },
       {
         "number": "03",
         "title": "Plano Codificado a Mano",
-        "description": "Convertimos el diseño digital en coordenadas de mapeo de alta resolución para nuestros artistas, garantizando una simetría matemática absoluta."
+        "description": "Convertimos el diseño digital aprobado en coordenadas de mapeo de alta resolución para nuestros artistas, garantizando una simetría matemática absoluta en cada anillo, línea y detalle."
       },
       {
         "number": "04",
         "title": "Ejecución a Mano Alzada",
-        "description": "Nuestros maestros pintores locales intervienen para dar vida al lienzo en el lugar de la obra con líneas limpias y detalles meticulosos."
+        "description": "Nuestros maestros pintores llegan al lugar y dan vida al plano — a mano alzada, con líneas limpias, pan de oro y el tipo de detalle que solo las manos humanas pueden crear."
       },
       {
         "number": "05",
         "title": "Sellar y Proteger",
-        "description": "Aplicamos una capa protectora de barniz mate para garantizar que tu mural hecho a mano se mantenga vibrante, resistente a los arañazos y completamente lavable durante años."
+        "description": "Cada mural completado se finaliza con un revestimiento de barniz mate premium, manteniendo tu obra de arte hecha a mano vibrante, resistente a los arañazos y completamente lavable durante años."
       }
     ]
   },
   "gallery": {
     "subtitle": "COLECCIÓN CURADA",
-    "title": "Espacios sagrados a nivel mundial.",
-    "text": "Más de 120 obras maestras. Visualiza el diseño de tus sueños pintado en tu pared al instante con nuestra IA espacial avanzada, y luego píntalo a mano directamente sobre tu pared."
+    "title": "Espacios sagrados. En todas partes.",
+    "text": "Más de 120 obras maestras pintadas a mano y sumando. Sube la foto de tu pared, previsualiza tu diseño de mandala personalizado al instante con nuestra IA espacial — y luego mira cómo cobra vida a mano."
   },
   "cta": {
     "topText": "Tu obra maestra personalizada está a 4 semanas de distancia.",
     "titleLine1": "Deja de esperar.",
     "titleLine2": "Empieza a crear.",
-    "description": "Sube una foto de tu pared. Nuestra IA Espacial pintará y renderizará instantáneamente un impresionante mandala personalizado en ella, seguido de la curación física por parte de nuestros maestros artesanos.",
+    "description": "Sube una foto de tu pared. Nuestra IA espacial renderiza instantáneamente un impresionante mandala personalizado en ella — luego nuestros maestros artesanos lo pintan directamente sobre tu pared, a mano, con pan de oro y absoluta precisión.",
     "buttonText": "Encarga tu Arte"
   },
   "footer": {
-    "bio": "Un estudio especializado que combina geometría sagrada y la IA Espacial avanzada con maestría pintada a mano. Murales personalizados pintados a mano y mandalas con texturas de pan de oro pintados directamente sobre paredes extraordinarias.",
+    "bio": "Una agencia boutique de arte espacial que une la geometría sagrada, la IA avanzada y la maestría pintada a mano. Murales personalizados y mandalas de pan de oro pintados directamente sobre paredes extraordinarias — un espacio sagrado a la vez.",
     "servicesHeader": "Servicios",
     "companyHeader": "Compañía",
     "contactHeader": "Conectar",
     "rights": "Todos los derechos reservados.",
     "newsletter": "Boletín",
     "newsletterPlaceholder": "tu@correo.com",
-    "newsletterDescription": "Novedades sobre nuevos trabajos, reflexiones y lo que lanzaremos a continuación.",
+    "newsletterDescription": "Nuevos trabajos, nuevas ideas y lo que estamos creando a continuación. Directo a tu bandeja de entrada.",
     "subscribe": "Suscribirse",
     "companyLinks": ["Sobre Nosotros", "Trabajos", "Estudio", "Contacto"]
   },
@@ -227,7 +227,7 @@
     "subtitle": "SOBRE NOSOTROS",
     "titleLine1": "Somos la agencia",
     "titleLine2": "que transforma.",
-    "description": "Una agencia boutique de arte espacial que cierra la brecha entre el algoritmo generativo y la maestría artesanal. Geometría sagrada, pan de oro puro y murales artísticos estructurales: diseñados con precisión de IA, pintados completamente a mano.",
+    "description": "Una agencia boutique de arte espacial que cierra la brecha entre los algoritmos generativos y la maestría artesanal. Geometría sagrada, pan de oro puro y murales artísticos estructurales — diseñados con precisión de IA, pintados completamente por manos humanas.",
     "projects": "120+",
     "projectsLabel": "MURALES",
     "delivery": "4-6sem",
@@ -236,13 +236,13 @@
     "fasterLabel": "PINTADO A MANO",
     "manifesto": {
       "subtitle": "NUESTRO MANIFIESTO",
-      "p1": "La mayoría de las paredes se construyen para dividir. Fundamos The Accent Wall Agency para hacer lo contrario: diseñar un arte de ",
+      "p1": "La mayoría de las paredes se construyen para dividir. Fundamos The Accent Wall Agency para hacer lo contrario — diseñar un arte de ",
       "faster": "mandalas asombroso",
       "p2": ", alinear espacios con ",
       "better": "geometría sagrada",
-      "p3": " y nunca comprometer el ",
+      "p3": ", y nunca comprometer el ",
       "craft": "alma humana",
-      "p4": ". Cada centro complejo, cada círculo en expansión y cada línea fina está diseñada por algoritmos para colapsar la distancia entre tu ",
+      "p4": ". Cada círculo en expansión, cada punto fino, cada detalle dorado es diseñado por algoritmos — y ejecutado por manos — para colapsar la distancia entre tu ",
       "vision": "visión interna",
       "p5": " y tu ",
       "space": "mundo exterior."
@@ -250,19 +250,19 @@
     "stats": [
       {
         "value": "120+",
-        "label": "Murales exclusivos diseñados y pintados a mano"
+        "label": "Murales personalizados diseñados y pintados a mano"
       },
       {
         "value": "4-6sem",
-        "label": "Plazo promedio de creación a instalación"
+        "label": "Plazo promedio desde el informe hasta la instalación"
       },
       {
         "value": "100%",
-        "label": "Geometría pintada a mano con pan de oro"
+        "label": "Geometría sagrada pintada a mano con pan de oro"
       },
       {
         "value": "0",
-        "label": "Vinilos industriales o plantillas utilizadas"
+        "label": "Impresiones de vinilo industrial o pegatinas de pared. Jamás."
       }
     ],
     "howWeWork": {
@@ -272,25 +272,25 @@
           "num": "I",
           "bgNum": "I",
           "title": "Dibujado en Papel",
-          "description": "Cada mandala personalizado comienza como una idea orgánica. Dibujamos los patrones geométricos iniciales a mano sobre papel físico, capturando la inspiración artística en su estado más puro."
+          "description": "Cada mandala comienza como una idea en papel físico. Dibujamos la composición geométrica inicial a mano — capturando la intención artística pura antes de que intervenga cualquier algoritmo."
         },
         {
           "num": "II",
           "bgNum": "II",
           "title": "Simetría Algorítmica",
-          "description": "Subimos el dibujo a nuestra IA espacial. Nuestra red de mapeo de perspectiva superpone la geometría con precisión en tu pared, mostrándote el diseño exacto en tiempo real."
+          "description": "El boceto ingresa a nuestra IA espacial. Nuestro motor de mapeo de perspectivas superpone la geometría con precisión en tu pared — mostrándote la escala, proporción y distribución exactas en tiempo real."
         },
         {
           "num": "III",
           "bgNum": "III",
           "title": "Alma Pintada a Mano",
-          "description": "Sin máquinas industriales ni proyecciones mecánicas. Nuestros maestros muralistas dedican días a pintar cada círculo concéntrico y línea de pan de oro totalmente a mano, dando vida a la obra."
+          "description": "Sin proyectores. Sin máquinas. Sin atajos. Nuestros maestros muralistas dedican días a pintar cada círculo concéntrico, cada línea de pan de oro y cada detalle fino — completamente a mano, directamente en tu pared."
         },
         {
           "num": "IV",
           "bgNum": "IV",
-          "title": "Vibra de Diseño Completa",
-          "description": "No solo pintamos una pared; elevamos la energía de toda la habitación. Nuestros mandalas están diseñados para armonizar con la luz, las texturas y el mobiliario, creando una vibra espacial cohesiva y profunda."
+          "title": "Armonía Espacial Completa",
+          "description": "No solo pintamos una pared — elevamos la energía de toda la habitación. Cada mandala está diseñado para armonizar con tu iluminación, muebles y texturas, creando un espacio que se siente tan bien como se ve."
         }
       ]
     }
@@ -298,64 +298,64 @@
   "studioPage": {
     "subtitle": "EL ESTUDIO",
     "title": "Apertura Próximamente",
-    "description": "Estamos diseñando nuestra sala de exhibición de arte generativo física y digital: donde los algoritmos, la IA espacial y los mandalas dorados pintados a mano se encuentran. Una experiencia de geometría sagrada próximamente en el corazón de la ciudad.",
+    "description": "Estamos construyendo nuestra sala de exposición física y digital de geometría sagrada — un espacio donde los algoritmos generativos, la IA espacial y los mandalas de pan de oro pintados a mano se unen bajo un mismo techo. Una experiencia de arte viva y vibrante. Apertura próximamente en el corazón de la ciudad.",
     "notifyMe": "Notificarme",
     "backHome": "Volver al Inicio",
     "emailPlaceholder": "Ingresa tu correo"
   },
   "contactPage": {
     "subtitle": "PONTE EN CONTACTO",
-    "title": "Alineemos tu espacio",
-    "description": "¿Tienes un proyecto de mural de pared a medida o una solicitud de diseño de espacio? Ponte en contacto a través de nuestros canales directos o déjanos un mensaje con el formulario de consulta algorítmica de abajo.",
+    "title": "Alineemos tu espacio.",
+    "description": "¿Tienes una pared que merece una obra maestra? Ponte en contacto a través de nuestros canales directos o completa el resumen del proyecto a continuación — y comenzaremos a diseñar tu espacio sagrado.",
     "directChannelsTitle": "Canales Directos",
-    "directChannelsSubtitle": "La forma más fácil de iniciar una conversación.",
+    "directChannelsSubtitle": "La forma más rápida de iniciar una conversación.",
     "whatsappLabel": "Chat de WhatsApp",
-    "whatsappSub": "Respuesta instantánea. Ideal para detalles rápidos.",
+    "whatsappSub": "Respuesta instantánea. Ideal para detalles rápidos y fotos de paredes.",
     "whatsappText": "Chatea en WhatsApp",
-    "instagramLabel": "Instagram DM",
-    "instagramSub": "Envíanos fotos de tu espacio.",
-    "instagramText": "Enviar Mensaje",
-    "emailLabel": "Correo Directo",
+    "instagramLabel": "Mensaje Directo de Instagram",
+    "instagramSub": "Envíanos fotos de tu espacio. Nos encanta ver con qué estamos trabajando.",
+    "instagramText": "Enviar un Mensaje",
+    "emailLabel": "Correo Electrónico Directo",
     "emailSub": "Para arquitectos, diseñadores de interiores y curadores.",
     "emailText": "sahoovenketeswar@gmail.com",
-    "formTitle": "Resumen de Proyecto Algorítmico",
+    "formTitle": "Resumen de Proyecto",
     "formSubtitle": "Cuéntanos sobre tu espacio. Lo mapearemos.",
     "fieldName": "Tu Nombre",
-    "fieldEmail": "Tu Correo",
+    "fieldEmail": "Tu Correo Electrónico",
     "fieldPhone": "Teléfono (Opcional)",
     "fieldSpace": "Tipo de Espacio",
     "fieldSpacePlaceholder": "ej., Sala de Estar, Centro de Bienestar, Vestíbulo de Hotel",
     "fieldDimensions": "Dimensiones de la Pared (Opcional)",
     "fieldDimensionsPlaceholder": "ej., 4m x 3m",
     "fieldMessage": "Vibra y Detalles del Proyecto",
-    "fieldMessagePlaceholder": "Describe la energía o el estilo que buscas...",
+    "fieldMessagePlaceholder": "Describe la energía o el estilo que deseas...",
     "submitButton": "Transmitir Resumen",
-    "successMessage": "¡Resumen transmitido con éxito! Nuestro diseñador-IA está analizando tu espacio."
+    "successMessage": "Resumen recibido. Nuestros diseñadores ya están pensando en tu pared."
   },
   "studioEditor": {
     "title": "Visualizador Espacial de IA",
-    "subtitle": "GENERA TU ARTE",
-    "description": "Sube una foto de tu pared y selecciona o sube un mandala de referencia. Nuestra IA Espacial analizará la iluminación, textura y perspectiva para renderizar una maqueta fotorrealista de tu arte mural personalizado pintado a mano.",
+    "subtitle": "PREVISUALIZA TU PARED",
+    "description": "Sube una foto de tu pared y selecciona o sube una referencia de mandala. Nuestra IA espacial analizará la iluminación, la textura y la perspectiva para renderizar una previsualización fotorrealista de tu arte de pared personalizado pintado a mano — antes de que un solo pincel toque tu pared.",
     "uploadWall": "Subir Foto de Pared",
-    "uploadWallDescription": "Arrastra y suelta tu imagen de pared, o haz clic para buscar. Soporta JPG, PNG.",
-    "selectMandala": "Seleccionar Mandala",
+    "uploadWallDescription": "Arrastra y suelta la imagen de tu pared, o haz clic para buscar. Admite JPG, PNG.",
+    "selectMandala": "Seleccionar Diseño de Mandala",
     "customReference": "Subir Referencia Personalizada",
-    "customReferenceDescription": "Sube una imagen de mandala de referencia.",
-    "generateButton": "Generar Maqueta de Mural",
-    "generatingButton": "Pintando Pared...",
-    "downloadButton": "Descargar Obra Maestra",
-    "originalWall": "Espacio de Pared Original",
-    "generatedMural": "Mural Generado por IA",
+    "customReferenceDescription": "Sube tu propia imagen de mandala de referencia.",
+    "generateButton": "Generar Previsualización de Mural",
+    "generatingButton": "Pintando Tu Pared...",
+    "downloadButton": "Descargar Tu Previsualización",
+    "originalWall": "Tu Pared Hoy",
+    "generatedMural": "Tu Pared, Transformada",
     "loadingSteps": {
-      "analyzing": "Analizando iluminación y textura de la pared...",
-      "parsing": "Evaluando geometría y patrones del mandala...",
-      "synthesis": "Sintetizando indicación de diseño...",
+      "analyzing": "Analizando la iluminación y la textura de la pared...",
+      "parsing": "Evaluando la geometría del mandala y los patrones sagrados...",
+      "synthesis": "Sintetizando tu diseño a medida...",
       "generating": "Pintando tu pared con IA Espacial..."
     },
     "errors": {
-      "missingWall": "Por favor sube una imagen de pared primero.",
-      "missingMandala": "Por favor selecciona un mandala o sube una imagen de referencia personalizada.",
-      "generic": "Algo salió mal. Por favor intenta de nuevo."
+      "missingWall": "Por favor, sube una imagen de pared primero.",
+      "missingMandala": "Por favor, selecciona un mandala o sube una imagen de referencia personalizada.",
+      "generic": "Algo salió mal. Por favor, inténtalo de nuevo."
     }
   }
 }
