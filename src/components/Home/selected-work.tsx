@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { BlurImage } from "../ui/blur-image";
 import { mandala10, mandala11, mandala12, mandala13, mandala4, mandala5, mandala6, mandala7, mandala8 } from "@/assets";
 
 const row1Images = [
@@ -30,10 +30,11 @@ const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
           key={index}
           className="relative w-[320px] md:w-[448px] lg:w-[480px] aspect-[16/10] overflow-hidden rounded-2xl"
         >
-          <Image
+          <BlurImage
             src={img}
             alt={`Gallery ${index}`}
             fill
+            sizes="(max-width: 768px) 320px, (max-width: 1024px) 448px, 480px"
             className="object-cover transition-all duration-700"
           />
         </div>
@@ -43,10 +44,11 @@ const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
           key={`repeat-${index}`}
           className="relative w-[320px] md:w-[448px] lg:w-[480px] aspect-[16/10] overflow-hidden rounded-2xl"
         >
-          <Image
+          <BlurImage
             src={img}
             alt={`Gallery Repeat ${index}`}
             fill
+            sizes="(max-width: 768px) 320px, (max-width: 1024px) 448px, 480px"
             className="object-cover transition-all duration-700"
           />
         </div>

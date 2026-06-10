@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import { BlurImage } from "../ui/blur-image";
 import { 
   UploadCloud, 
   Sparkles, 
@@ -450,10 +451,11 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                               : "border-white/5 hover:border-white/20 hover:bg-white/[0.03]"
                           }`}
                         >
-                          <Image
+                          <BlurImage
                             src={mandala.src}
                             alt={mandala.name}
                             fill
+                            sizes="(max-width: 768px) 33vw, 200px"
                             className="object-cover opacity-80 group-hover/mandala:opacity-100 transition-opacity p-2"
                           />
                           {isSelected && (

@@ -27,6 +27,16 @@ export default function SmoothScroll() {
 
     lenisRef.current = lenis;
 
+    // Setup a ResizeObserver to observe size changes to the body (e.g. from lazy loaded content)
+    // and recalculate Lenis scroll dimensions.
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+    });
+
+    if (document.body) {
+      resizeObserver.observe(document.body);
+    }
+
     // Request Animation Frame loop to drive Lenis scrolling
     let rafId: number;
     function raf(time: number) {
@@ -37,6 +47,7 @@ export default function SmoothScroll() {
 
     // Clean up on unmount
     return () => {
+      resizeObserver.disconnect();
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
@@ -46,10 +57,14 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  // Immediately reset scroll position to top when pathname changes
+  // Immediately reset scroll position and resize when pathname changes
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
+      // Wait a frame for DOM rendering to complete, then resize
+      setTimeout(() => {
+        lenisRef.current?.resize();
+      }, 80);
     }
   }, [pathname]);
 

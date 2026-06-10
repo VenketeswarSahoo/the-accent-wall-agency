@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { LogoIcon } from "@/assets";
 import NewsletterForm from "./newsletter-form";
+import CurrentYear from "./current-year";
 
 interface FooterProps {
   dict: any;
@@ -233,7 +234,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
           {/* Bottom: Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-white/5">
             <span className="text-muted-foreground text-xs">
-              © {new Date().getFullYear()} The Accent Wall Agency.{" "}
+              © <CurrentYear /> The Accent Wall Agency.{" "}
               {dict?.footer?.rights}
             </span>
             <a

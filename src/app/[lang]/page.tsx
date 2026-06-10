@@ -1,14 +1,25 @@
-import AboutSection from "@/components/Home/about-section";
-import CTASection from "@/components/Home/cta-section";
-import Hero from "@/components/Home/hero";
-import PartnerSection from "@/components/Home/partner-section";
-import ProcessSection from "@/components/Home/process-section";
-import SelectedWorkSection from "@/components/Home/selected-work";
-import ServicesSection from "@/components/Home/services-section";
-import WorkSection from "@/components/Home/work-section";
 import React from "react";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
+
+import Hero from "@/components/Home/hero";
+
+const PartnerSection = dynamic(
+  () => import("@/components/Home/partner-section"),
+);
+const AboutSection = dynamic(() => import("@/components/Home/about-section"));
+const WorkSection = dynamic(() => import("@/components/Home/work-section"));
+const ServicesSection = dynamic(
+  () => import("@/components/Home/services-section"),
+);
+const ProcessSection = dynamic(
+  () => import("@/components/Home/process-section"),
+);
+const SelectedWorkSection = dynamic(
+  () => import("@/components/Home/selected-work"),
+);
+const CTASection = dynamic(() => import("@/components/Home/cta-section"));
 
 interface PageProps {
   params: Promise<{ lang: string }>;

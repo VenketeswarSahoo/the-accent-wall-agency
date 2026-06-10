@@ -1,5 +1,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { BlurImage } from "../ui/blur-image";
 import { ProjectLink } from "@/assets";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -33,10 +34,11 @@ const ProjectCard = ({
           isFeatured ? "aspect-[16/9] lg:aspect-[21/9]" : "aspect-[4/3]",
         )}
       >
-        <Image
+        <BlurImage
           src={image}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -53,10 +55,11 @@ const ProjectCard = ({
 
             {/* Rotating Text */}
             <div className="absolute inset-0 animate-spin-slow">
-              <Image
+              <BlurImage
                 src={ProjectLink}
                 alt="View Project"
                 fill
+                sizes="(max-width: 768px) 112px, 176px"
                 className="object-contain"
               />
             </div>

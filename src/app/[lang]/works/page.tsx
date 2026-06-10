@@ -1,7 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
-import WorksFilterWrapper from "@/components/Work/works-filter-wrapper";
+
+const WorksFilterWrapper = dynamic(() => import("@/components/Work/works-filter-wrapper"));
 
 interface PageProps {
   params: Promise<{ lang: string }>;
