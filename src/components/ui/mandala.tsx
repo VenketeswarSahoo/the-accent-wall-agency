@@ -266,8 +266,11 @@ export const MandalaCustom = ({
     return null;
   }
 
+  let svgContent = "";
   try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const fs = require("fs");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const path = require("path");
 
     const resolvedPath = customSvgPath
@@ -279,27 +282,27 @@ export const MandalaCustom = ({
       return null;
     }
 
-    let svgContent = fs.readFileSync(resolvedPath, "utf8");
-    const svgStart = svgContent.indexOf("<svg");
+    let rawSvg = fs.readFileSync(resolvedPath, "utf8");
+    const svgStart = rawSvg.indexOf("<svg");
     if (svgStart !== -1) {
-      svgContent = svgContent.substring(svgStart);
+      rawSvg = rawSvg.substring(svgStart);
     }
 
-    svgContent = svgContent.replace(/<rect[^>]*fill:\s*#FFFFFF[^>]*\/>/gi, "");
-    svgContent = svgContent.replace(/<rect[^>]*fill="#FFFFFF"[^>]*\/>/gi, "");
-    svgContent = svgContent.replace(
+    rawSvg = rawSvg.replace(/<rect[^>]*fill:\s*#FFFFFF[^>]*\/>/gi, "");
+    rawSvg = rawSvg.replace(/<rect[^>]*fill="#FFFFFF"[^>]*\/>/gi, "");
+    rawSvg = rawSvg.replace(
       /<rect[^>]*style="[^"]*fill:\s*#FFFFFF[^"]*"[^>]*\/>/gi,
       "",
     );
 
-    svgContent = svgContent.replace(/fill:#BFBFBF/gi, "fill:currentColor");
-    svgContent = svgContent.replace(/fill="#BFBFBF"/gi, 'fill="currentColor"');
-    svgContent = svgContent.replace(/fill:#2C3A49/gi, "fill:currentColor");
-    svgContent = svgContent.replace(/fill="#2C3A49"/gi, 'fill="currentColor"');
+    rawSvg = rawSvg.replace(/fill:#BFBFBF/gi, "fill:currentColor");
+    rawSvg = rawSvg.replace(/fill="#BFBFBF"/gi, 'fill="currentColor"');
+    rawSvg = rawSvg.replace(/fill:#2C3A49/gi, "fill:currentColor");
+    rawSvg = rawSvg.replace(/fill="#2C3A49"/gi, 'fill="currentColor"');
 
     let viewBoxWidth = 4000;
     let viewBoxHeight = 4000;
-    const viewBoxMatch = svgContent.match(/viewBox=["']([^"']+)["']/i);
+    const viewBoxMatch = rawSvg.match(/viewBox=["']([^"']+)["']/i);
     if (viewBoxMatch) {
       const parts = viewBoxMatch[1].trim().split(/\s+/);
       if (parts.length === 4) {
@@ -312,22 +315,22 @@ export const MandalaCustom = ({
     const cy = viewBoxHeight / 2;
     const r = Math.min(viewBoxWidth, viewBoxHeight) / 2;
 
-    const svgHeaderMatch = svgContent.match(/<svg([^>]*)>/i);
+    const svgHeaderMatch = rawSvg.match(/<svg([^>]*)>/i);
     if (svgHeaderMatch) {
       const svgHeader = svgHeaderMatch[0];
-      const headerIndex = svgContent.indexOf(svgHeader);
+      const headerIndex = rawSvg.indexOf(svgHeader);
       const innerStart = headerIndex + svgHeader.length;
-      const innerEnd = svgContent.lastIndexOf("</svg>");
+      const innerEnd = rawSvg.lastIndexOf("</svg>");
       if (innerEnd !== -1) {
-        let innerContent = svgContent.substring(innerStart, innerEnd);
+        let innerContent = rawSvg.substring(innerStart, innerEnd);
         const maskDefs = `<defs><radialGradient id="grad-${uniqueId}" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.55" /><stop offset="30%" stop-color="#ffffff" stop-opacity="0.40" /><stop offset="65%" stop-color="#ffffff" stop-opacity="0.18" /><stop offset="85%" stop-color="#ffffff" stop-opacity="0.05" /><stop offset="100%" stop-color="#ffffff" stop-opacity="0" /></radialGradient><mask id="mask-${uniqueId}" maskUnits="userSpaceOnUse" x="0" y="0" width="${viewBoxWidth}" height="${viewBoxHeight}"><circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#grad-${uniqueId})" /></mask></defs>`;
         innerContent = `${maskDefs}<g mask="url(#mask-${uniqueId})">${innerContent}</g>`;
-        svgContent =
-          svgContent.substring(0, innerStart) + innerContent + "</svg>";
+        rawSvg =
+          rawSvg.substring(0, innerStart) + innerContent + "</svg>";
       }
     }
 
-    svgContent = svgContent.replace(
+    rawSvg = rawSvg.replace(
       /<svg([^>]*)/,
       (match: string, attrs: string) => {
         const cleanAttrs = attrs.replace(
@@ -359,16 +362,22 @@ export const MandalaCustom = ({
       },
     );
 
-    return (
-      <div
-        dangerouslySetInnerHTML={{ __html: svgContent }}
-        className="contents"
-      />
-    );
+    svgContent = rawSvg;
   } catch (error) {
     console.error("Error loading custom mandala SVG:", error);
     return null;
   }
+
+  if (!svgContent) {
+    return null;
+  }
+
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+      className="contents"
+    />
+  );
 };
 
 export default function Mandala({ variant, ...props }: MandalaProps) {

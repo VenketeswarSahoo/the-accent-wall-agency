@@ -4,8 +4,10 @@ import React from "react";
 import Link from "next/link";
 import { Mail, ArrowRight } from "lucide-react";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface ContactClientProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
   children?: React.ReactNode;
 }

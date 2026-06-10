@@ -2,8 +2,16 @@ import React from "react";
 import Section from "../ui/section";
 import Mandala from "../ui/mandala";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
+interface ProcessItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
 interface ProcessSectionProps {
-  dict: any;
+  dict: Dictionary;
 }
 
 const ProcessSection = ({ dict }: ProcessSectionProps) => {
@@ -46,7 +54,7 @@ const ProcessSection = ({ dict }: ProcessSectionProps) => {
             speed={500}
           />
           <div className="relative z-10 flex flex-col">
-            {processes.map((process: any, index: number) => (
+            {processes.map((process: ProcessItem, index: number) => (
               <div
                 key={index}
                 className="group grid grid-cols-1 md:grid-cols-12 items-start py-8 lg:py-12 border-b border-white/5 last:border-0 transition-all duration-300"

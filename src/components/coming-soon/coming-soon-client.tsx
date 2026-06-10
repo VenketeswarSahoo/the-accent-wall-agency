@@ -4,8 +4,10 @@ import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface ComingSoonClientProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
 }
 

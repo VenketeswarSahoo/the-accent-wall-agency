@@ -2,12 +2,12 @@ import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
 
 import { cn } from "@/lib/utils"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons"
+import { ArrowDown01Icon } from "@hugeicons/core-free-icons"
 
 interface AccordionProps extends React.ComponentPropsWithoutRef<"div"> {
   type?: "single" | "multiple";
-  value?: any;
-  onValueChange?: (value: any) => void;
+  value?: string | string[];
+  onValueChange?: (value: string | string[]) => void;
 }
 
 function Accordion({
@@ -20,11 +20,13 @@ function Accordion({
   return (
     <AccordionPrimitive.Root
       multiple={type === "multiple"}
-      value={value}
-      onValueChange={onValueChange}
+      value={value as React.ComponentProps<typeof AccordionPrimitive.Root>["value"]}
+      onValueChange={onValueChange as React.ComponentProps<typeof AccordionPrimitive.Root>["onValueChange"]}
       render={(renderProps) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { multiple: _m, ...rest } = renderProps as any;
+        const { multiple: _m, ...rest } = renderProps as React.HTMLAttributes<HTMLDivElement> & {
+          multiple?: boolean;
+        };
         return (
           <div
             data-slot="accordion"

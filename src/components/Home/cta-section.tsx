@@ -4,8 +4,10 @@ import Link from "next/link";
 
 import Section from "../ui/section";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface CTASectionProps {
-  dict: any;
+  dict: Dictionary;
   lang?: string;
 }
 

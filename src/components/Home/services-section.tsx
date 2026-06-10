@@ -4,8 +4,16 @@ import React, { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
+interface ServiceItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
 interface ServicesSectionProps {
-  dict: any;
+  dict: Dictionary;
 }
 
 const ServicesSection = ({ dict }: ServicesSectionProps) => {
@@ -64,7 +72,7 @@ const ServicesSection = ({ dict }: ServicesSectionProps) => {
 
             {/* Cards Section */}
             <div className="flex items-end pb-32 pr-[50vw]">
-              {services.map((service: any, index: number) => (
+              {services.map((service: ServiceItem, index: number) => (
                 <div
                   key={index}
                   className="group relative flex h-[70vh] w-[350px] md:w-[450px] lg:w-[600px] flex-none flex-col justify-between border-l border-white/5 p-10 lg:p-16 lg:pb-24 transition-colors"
@@ -119,7 +127,7 @@ const ServicesSection = ({ dict }: ServicesSectionProps) => {
           </div>
 
           <div className="flex flex-col">
-            {services.map((service: any, index: number) => (
+            {services.map((service: ServiceItem, index: number) => (
               <div
                 key={index}
                 className="flex flex-col gap-6 py-12 border-b border-white/10 last:border-0"

@@ -11,9 +11,10 @@ interface StatItem {
 }
 
 import Section from "../ui/section";
+import { Dictionary } from "@/app/[lang]/dictionaries";
 
 interface AboutSectionProps {
-  dict: any;
+  dict: Dictionary;
 }
 
 const AboutSection = ({ dict }: AboutSectionProps) => {

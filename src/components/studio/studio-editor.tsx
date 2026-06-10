@@ -1,18 +1,18 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import Image from "next/image";
+import { type StaticImageData } from "next/image";
 import { BlurImage } from "../ui/blur-image";
-import { 
-  UploadCloud, 
-  Sparkles, 
-  Download, 
-  RefreshCw, 
-  Check, 
-  Image as ImageIcon,
+import { Dictionary } from "@/app/[lang]/dictionaries";
+import {
+  UploadCloud,
+  Sparkles,
+  Download,
+  RefreshCw,
+  Check,
   ArrowRight,
-  AlertCircle
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -23,21 +23,21 @@ import mandala3 from "@/assets/Img/mandalas/mandala-3.png";
 import mandala4 from "@/assets/Img/mandalas/mandala-4.jpg";
 
 interface StudioEditorProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
 }
 
 interface MandalaOption {
   id: string;
   name: string;
-  src: any;
+  src: StaticImageData;
 }
 
 // Canvas utility to blend wall image and mandala art
 const blendWallAndMandala = (
   wallBase64: string,
   mandalaBase64: string,
-  isCustom: boolean
+  isCustom: boolean,
 ): Promise<string> => {
   return new Promise((resolve, reject) => {
     const wallImg = new window.Image();
@@ -105,7 +105,9 @@ const blendWallAndMandala = (
           // 8. Draw an elegant, thin, hand-painted circular border around the mandala
           ctx.save();
           ctx.globalAlpha = 0.5;
-          ctx.strokeStyle = isCustom ? "rgba(100, 100, 100, 0.3)" : "rgba(180, 140, 60, 0.4)";
+          ctx.strokeStyle = isCustom
+            ? "rgba(100, 100, 100, 0.3)"
+            : "rgba(180, 140, 60, 0.4)";
           ctx.lineWidth = Math.max(1.5, size * 0.005);
           ctx.beginPath();
           ctx.arc(cx, cy, r, 0, Math.PI * 2);
@@ -122,7 +124,8 @@ const blendWallAndMandala = (
     wallImg.onload = onLoad;
     mandalaImg.onload = onLoad;
     wallImg.onerror = () => reject(new Error("Failed to load wall image"));
-    mandalaImg.onerror = () => reject(new Error("Failed to load mandala image"));
+    mandalaImg.onerror = () =>
+      reject(new Error("Failed to load mandala image"));
 
     wallImg.src = wallBase64;
     mandalaImg.src = mandalaBase64;
@@ -131,20 +134,40 @@ const blendWallAndMandala = (
 
 export default function StudioEditor({ dict, lang }: StudioEditorProps) {
   const t = dict?.studioEditor || {};
-  
+
   // Pre-collected mandalas definition
   const PRECOLLECTED_MANDALAS: MandalaOption[] = [
-    { id: "mandala-1", name: lang === "es" ? "Alineación de Loto" : "Lotus Alignment", src: mandala1 },
-    { id: "mandala-2", name: lang === "es" ? "Círculo Samsara" : "Samsara Circle", src: mandala2 },
-    { id: "mandala-3", name: lang === "es" ? "Fusión Vectorial" : "Vectorial Fusion", src: mandala3 },
-    { id: "mandala-4", name: lang === "es" ? "Fusión Vectorial" : "Vectorial Fusion", src: mandala4 },
+    {
+      id: "mandala-1",
+      name: lang === "es" ? "Alineación de Loto" : "Lotus Alignment",
+      src: mandala1,
+    },
+    {
+      id: "mandala-2",
+      name: lang === "es" ? "Círculo Samsara" : "Samsara Circle",
+      src: mandala2,
+    },
+    {
+      id: "mandala-3",
+      name: lang === "es" ? "Fusión Vectorial" : "Vectorial Fusion",
+      src: mandala3,
+    },
+    {
+      id: "mandala-4",
+      name: lang === "es" ? "Fusión Vectorial" : "Vectorial Fusion",
+      src: mandala4,
+    },
   ];
 
   // States
   const [wallImage, setWallImage] = useState<string | null>(null);
-  const [selectedMandalaId, setSelectedMandalaId] = useState<string | null>(null);
-  const [customMandalaImage, setCustomMandalaImage] = useState<string | null>(null);
-  
+  const [selectedMandalaId, setSelectedMandalaId] = useState<string | null>(
+    null,
+  );
+  const [customMandalaImage, setCustomMandalaImage] = useState<string | null>(
+    null,
+  );
+
   const [generating, setGenerating] = useState(false);
   const [generatedResult, setGeneratedResult] = useState<string | null>(null);
   const [loadingStepIndex, setLoadingStepIndex] = useState(0);
@@ -158,14 +181,13 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
     t.loadingSteps?.analyzing || "Analyzing wall lighting & texture...",
     t.loadingSteps?.parsing || "Evaluating mandala geometry & patterns...",
     t.loadingSteps?.synthesis || "Synthesizing descriptive design prompt...",
-    t.loadingSteps?.generating || "Painting your wall with Spatial AI..."
+    t.loadingSteps?.generating || "Painting your wall with Spatial AI...",
   ];
 
   // Cycle through loading steps during generation
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (generating) {
-      setLoadingStepIndex(0);
       interval = setInterval(() => {
         setLoadingStepIndex((prev) => {
           if (prev < loadingSteps.length - 1) return prev + 1;
@@ -174,7 +196,7 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
       }, 3500);
     }
     return () => clearInterval(interval);
-  }, [generating]);
+  }, [generating, loadingSteps.length]);
 
   // Helper: Convert file to Base64
   const fileToBase64 = (file: File): Promise<string> => {
@@ -204,26 +226,44 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
-      toast.error(lang === "es" ? "Por favor selecciona un archivo de imagen válido." : "Please select a valid image file.");
+      toast.error(
+        lang === "es"
+          ? "Por favor selecciona un archivo de imagen válido."
+          : "Please select a valid image file.",
+      );
       return;
     }
 
     try {
       const base64 = await fileToBase64(file);
       setWallImage(base64);
-      toast.success(lang === "es" ? "Imagen de pared cargada correctamente." : "Wall photo uploaded successfully.");
+      toast.success(
+        lang === "es"
+          ? "Imagen de pared cargada correctamente."
+          : "Wall photo uploaded successfully.",
+      );
     } catch (err) {
       console.error(err);
-      toast.error(lang === "es" ? "Error al procesar la imagen." : "Error processing image.");
+      toast.error(
+        lang === "es"
+          ? "Error al procesar la imagen."
+          : "Error processing image.",
+      );
     }
   };
 
-  const handleCustomMandalaUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCustomMandalaUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
-      toast.error(lang === "es" ? "Por favor selecciona un archivo de imagen válido." : "Please select a valid image file.");
+      toast.error(
+        lang === "es"
+          ? "Por favor selecciona un archivo de imagen válido."
+          : "Please select a valid image file.",
+      );
       return;
     }
 
@@ -231,10 +271,16 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
       const base64 = await fileToBase64(file);
       setCustomMandalaImage(base64);
       setSelectedMandalaId("custom");
-      toast.success(lang === "es" ? "Referencia cargada." : "Reference mandala uploaded.");
+      toast.success(
+        lang === "es" ? "Referencia cargada." : "Reference mandala uploaded.",
+      );
     } catch (err) {
       console.error(err);
-      toast.error(lang === "es" ? "Error al procesar el mandala." : "Error processing mandala.");
+      toast.error(
+        lang === "es"
+          ? "Error al procesar el mandala."
+          : "Error processing mandala.",
+      );
     }
   };
 
@@ -250,11 +296,15 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
     }
 
     if (!selectedMandalaId) {
-      toast.error(t.errors?.missingMandala || "Please select a mandala or upload a custom reference.");
+      toast.error(
+        t.errors?.missingMandala ||
+          "Please select a mandala or upload a custom reference.",
+      );
       return;
     }
 
     setGenerating(true);
+    setLoadingStepIndex(0);
     setGeneratedResult(null);
 
     try {
@@ -263,10 +313,12 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
       if (selectedMandalaId === "custom" && customMandalaImage) {
         finalMandalaBase64 = customMandalaImage;
       } else {
-        const selectedOption = PRECOLLECTED_MANDALAS.find(opt => opt.id === selectedMandalaId);
+        const selectedOption = PRECOLLECTED_MANDALAS.find(
+          (opt) => opt.id === selectedMandalaId,
+        );
         if (selectedOption) {
           // Resolve static ESM import URL
-          const resolvedSrc = selectedOption.src.src || selectedOption.src;
+          const resolvedSrc = typeof selectedOption.src === "string" ? selectedOption.src : selectedOption.src.src;
           finalMandalaBase64 = await assetToBase64(resolvedSrc);
         }
       }
@@ -291,25 +343,37 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
       }
 
       if (data.fallback) {
-        console.log("Stage 2 API fallback: Rendering client-side Canvas blend...");
+        console.log(
+          "Stage 2 API fallback: Rendering client-side Canvas blend...",
+        );
         const blendedImage = await blendWallAndMandala(
           wallImage,
           finalMandalaBase64,
-          selectedMandalaId === "custom"
+          selectedMandalaId === "custom",
         );
         setGeneratedResult(blendedImage);
         toast.success(
           lang === "es"
             ? "¡Mural compuesto con éxito usando el análisis espacial!"
-            : "Mural composited successfully using spatial analysis!"
+            : "Mural composited successfully using spatial analysis!",
         );
       } else {
         setGeneratedResult(data.image);
-        toast.success(lang === "es" ? "¡Mural renderizado con éxito!" : "Mural rendered successfully!");
+        toast.success(
+          lang === "es"
+            ? "¡Mural renderizado con éxito!"
+            : "Mural rendered successfully!",
+        );
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      toast.error(err.message || (lang === "es" ? "Error de generación de IA" : "AI Generation failed"));
+      const message =
+        err instanceof Error
+          ? err.message
+          : lang === "es"
+            ? "Error de generación de IA"
+            : "AI Generation failed";
+      toast.error(message);
     } finally {
       setGenerating(false);
     }
@@ -335,7 +399,6 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
   return (
     <div className="w-full min-h-screen bg-[#080808] text-white flex flex-col items-center py-20 px-4 md:px-8 font-sans">
       <div className="max-w-6xl w-full flex flex-col items-center gap-12">
-        
         {/* Elegant Luxury Header */}
         <div className="text-center flex flex-col items-center gap-3 max-w-2xl mt-8">
           <motion.span
@@ -374,13 +437,14 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
               transition={{ duration: 0.5 }}
               className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch"
             >
-              
               {/* Card 1: Wall Image Upload */}
               <div className="relative group rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 flex flex-col gap-6 transition-all duration-500 hover:border-primary/20 hover:bg-white/[0.03]">
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
-                
+
                 <h3 className="text-lg font-semibold tracking-wide text-neutral-200 flex items-center gap-2">
-                  <span className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs border border-primary/20 font-bold">1</span>
+                  <span className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs border border-primary/20 font-bold">
+                    1
+                  </span>
                   {t.uploadWall}
                 </h3>
 
@@ -403,7 +467,10 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                       onClick={() => setWallImage(null)}
                       className="absolute inset-0 bg-black/60 opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center justify-center gap-2 cursor-pointer text-xs font-semibold uppercase tracking-wider text-red-400"
                     >
-                      <RefreshCw className="size-4 animate-spin" style={{ animationDuration: '4s' }} />
+                      <RefreshCw
+                        className="size-4 animate-spin"
+                        style={{ animationDuration: "4s" }}
+                      />
                       {lang === "es" ? "Cambiar Imagen" : "Change Image"}
                     </button>
                   </div>
@@ -417,7 +484,9 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                     </div>
                     <div className="text-center px-4">
                       <p className="text-sm font-medium text-neutral-300 group-hover/uploader:text-white transition-colors">
-                        {lang === "es" ? "Subir foto de pared" : "Upload wall photo"}
+                        {lang === "es"
+                          ? "Subir foto de pared"
+                          : "Upload wall photo"}
                       </p>
                       <p className="text-xs text-neutral-500 mt-1 max-w-[240px] leading-relaxed">
                         {t.uploadWallDescription}
@@ -430,10 +499,12 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
               {/* Card 2: Mandala / Reference Selection */}
               <div className="relative group rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 flex flex-col gap-6 justify-between transition-all duration-500 hover:border-primary/20 hover:bg-white/[0.03]">
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out" />
-                
+
                 <div className="flex flex-col gap-6 w-full">
                   <h3 className="text-lg font-semibold tracking-wide text-neutral-200 flex items-center gap-2">
-                    <span className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs border border-primary/20 font-bold">2</span>
+                    <span className="size-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs border border-primary/20 font-bold">
+                      2
+                    </span>
                     {t.selectMandala}
                   </h3>
 
@@ -478,7 +549,9 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                       <span className="w-full border-t border-white/5" />
                     </div>
                     <span className="relative bg-[#080808] px-3 text-[0.6rem] tracking-widest text-neutral-500 uppercase">
-                      {lang === "es" ? "O sube una referencia" : "Or upload reference"}
+                      {lang === "es"
+                        ? "O sube una referencia"
+                        : "Or upload reference"}
                     </span>
                   </div>
 
@@ -506,7 +579,9 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                         className="absolute inset-0 bg-black/70 opacity-0 group-hover/customPreview:opacity-100 transition-opacity flex items-center justify-center gap-2 cursor-pointer text-xs font-semibold uppercase tracking-wider text-primary"
                       >
                         <RefreshCw className="size-4" />
-                        {lang === "es" ? "Cambiar Referencia" : "Change Reference"}
+                        {lang === "es"
+                          ? "Cambiar Referencia"
+                          : "Change Reference"}
                       </button>
                     </div>
                   ) : (
@@ -554,29 +629,69 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
               {/* Exquisite Rotating Spinner Icon */}
               <div className="relative size-36 sm:size-44 flex items-center justify-center">
                 {/* Outermost ring */}
-                <motion.div 
+                <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 16, ease: "linear" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 16,
+                    ease: "linear",
+                  }}
                   className="absolute inset-0 rounded-full border border-dashed border-primary/20"
                 />
                 {/* Middle ring */}
-                <motion.div 
+                <motion.div
                   animate={{ rotate: -360 }}
-                  transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 10,
+                    ease: "linear",
+                  }}
                   className="absolute inset-4 rounded-full border border-double border-primary/30"
                 />
                 {/* Center SVG Sacred Geometry */}
                 <motion.svg
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 25,
+                    ease: "linear",
+                  }}
                   viewBox="0 0 100 100"
                   className="size-20 sm:size-24 text-primary opacity-80"
                 >
-                  <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
-                  <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="1" />
-                  <path d="M 50,10 L 50,90 M 10,50 L 90,50 M 22,22 L 78,78 M 22,78 L 78,22" stroke="currentColor" strokeWidth="0.5" />
-                  <polygon points="50,10 78,22 90,50 78,78 50,90 22,78 10,50 22,22" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                  <polygon points="50,25 68,32 75,50 68,68 50,75 32,68 25,50 32,32" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="25"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                  <path
+                    d="M 50,10 L 50,90 M 10,50 L 90,50 M 22,22 L 78,78 M 22,78 L 78,22"
+                    stroke="currentColor"
+                    strokeWidth="0.5"
+                  />
+                  <polygon
+                    points="50,10 78,22 90,50 78,78 50,90 22,78 10,50 22,22"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="0.5"
+                  />
+                  <polygon
+                    points="50,25 68,32 75,50 68,68 50,75 32,68 25,50 32,32"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="0.5"
+                  />
                 </motion.svg>
               </div>
 
@@ -585,7 +700,7 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                 <span className="text-xs uppercase tracking-[0.25em] text-primary/80 font-bold">
                   {t.generatingButton}
                 </span>
-                
+
                 <div className="h-6 overflow-hidden flex flex-col justify-center relative w-full">
                   <AnimatePresence mode="wait">
                     <motion.p
@@ -623,7 +738,6 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
               className="w-full flex flex-col gap-8"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                
                 {/* Left: Original Wall Photo */}
                 <div className="rounded-2xl border border-white/5 bg-white/[0.01] p-6 flex flex-col gap-4">
                   <span className="text-xs font-semibold tracking-wider text-neutral-400 uppercase">
@@ -645,11 +759,11 @@ export default function StudioEditor({ dict, lang }: StudioEditorProps) {
                   <div className="absolute top-0 right-6 -translate-y-1/2 bg-primary text-black text-[0.6rem] tracking-[0.2em] font-extrabold px-3 py-1 rounded-full uppercase border border-black/20">
                     AI Spatial Mural
                   </div>
-                  
+
                   <span className="text-xs font-semibold tracking-wider text-primary uppercase">
                     {t.generatedMural}
                   </span>
-                  
+
                   <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-primary/10 bg-black flex items-center justify-center shadow-2xl shadow-primary/5 group/output">
                     {generatedResult && (
                       <img

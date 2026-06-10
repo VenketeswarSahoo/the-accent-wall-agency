@@ -104,7 +104,7 @@ function Tabs<T extends string = string>({
       <div
         className={cn("flex flex-col gap-2", className)}
         data-slot="tabs"
-        {...(props as any)}
+        {...(props as React.ComponentProps<"div">)}
       >
         {children}
       </div>
@@ -114,19 +114,11 @@ function Tabs<T extends string = string>({
 
 type TabsListProps = React.ComponentProps<"div"> & {
   children: React.ReactNode;
-  activeClassName?: string;
-  transition?: Transition;
 };
 
 function TabsList({
   children,
   className,
-  activeClassName,
-  transition = {
-    type: "spring",
-    stiffness: 400,
-    damping: 30,
-  },
   ...props
 }: TabsListProps) {
   return (
@@ -162,12 +154,15 @@ function TabsTrigger({
   // Track if this is the first time the component is rendering to skip entrance animation
   const [isFirstRender, setIsFirstRender] = React.useState(true);
   React.useEffect(() => {
-    setIsFirstRender(false);
+    const handle = requestAnimationFrame(() => {
+      setIsFirstRender(false);
+    });
+    return () => cancelAnimationFrame(handle);
   }, []);
 
   const localRef = React.useRef<HTMLButtonElement | null>(null);
   React.useImperativeHandle(
-    ref as any,
+    ref as React.Ref<HTMLButtonElement>,
     () => localRef.current as HTMLButtonElement,
   );
 
@@ -247,7 +242,7 @@ function TabsContents({
     <div
       className={cn("overflow-hidden", className)}
       data-slot="tabs-contents"
-      {...(props as any)}
+      {...(props as React.ComponentProps<"div">)}
     >
       <motion.div
         animate={{ x: `${activeIndex * -100}%` }}
@@ -287,7 +282,7 @@ function TabsContent({
       exit={{ filter: "blur(0px)" }}
       role="tabpanel"
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-      {...(props as any)}
+      {...(props as HTMLMotionProps<"div">)}
     >
       {children}
     </motion.div>

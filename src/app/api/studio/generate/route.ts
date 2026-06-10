@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     try {
       parsedWall = parseDataUrl(wallImage);
       parsedMandala = parseDataUrl(mandalaImage);
-    } catch (err) {
+    } catch {
       return NextResponse.json(
         { error: "Failed to parse images. Ensure they are valid data URLs." },
         { status: 400 }
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
           image: `data:image/jpeg;base64,${generatedImageBase64}`,
           prompt: generatedPrompt.trim(),
         });
-      } catch (imagenError: any) {
+      } catch (imagenError) {
         console.warn("Imagen API execution threw an exception. Triggering client-side fallback:", imagenError);
         return NextResponse.json({
           success: true,
@@ -160,7 +160,7 @@ export async function POST(request: Request) {
           prompt: generatedPrompt.trim(),
         });
       }
-    } catch (apiError: any) {
+    } catch (apiError) {
       console.warn("Orchestration pipeline execution threw an exception. Triggering client-side fallback:", apiError);
       return NextResponse.json({
         success: true,
@@ -168,10 +168,11 @@ export async function POST(request: Request) {
         prompt: "Spatial canvas blend fallback triggered due to remote API exception.",
       });
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error("Studio AI Generation API error:", error);
+    const message = error instanceof Error ? error.message : "Internal server error during image generation.";
     return NextResponse.json(
-      { error: error?.message || "Internal server error during image generation." },
+      { error: message },
       { status: 500 }
     );
   }

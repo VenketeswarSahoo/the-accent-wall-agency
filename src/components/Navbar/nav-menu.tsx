@@ -6,10 +6,12 @@ import { Mail, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface NavMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  dict: any;
+  dict: Dictionary;
 }
 
 interface MenuItem {
@@ -114,7 +116,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       Instagram
                     </span>
-                    <span className="text-muted-foreground">@the_venketesh</span>
+                    <span className="text-muted-foreground">
+                      @the_venketesh
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -141,7 +145,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       Twitter
                     </span>
-                    <span className="text-muted-foreground">@Venkatesh_5o2</span>
+                    <span className="text-muted-foreground">
+                      @Venkatesh_5o2
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -168,7 +174,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       WhatsApp
                     </span>
-                    <span className="text-muted-foreground">+91 9861949459</span>
+                    <span className="text-muted-foreground">
+                      +91 9861949459
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -197,7 +205,9 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
                       </svg>
                       LinkedIn
                     </span>
-                    <span className="text-muted-foreground">Venketeswar Sahoo</span>
+                    <span className="text-muted-foreground">
+                      Venketeswar Sahoo
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -228,7 +238,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ isOpen, onClose, dict }) => {
             {/* Menu Items */}
             <div className="flex-1 overflow-y-auto w-full pt-16 lg:pt-0">
               <div className="flex flex-col h-full items-start justify-center">
-                {menuItems.map((item, index) => (
+                {menuItems.map((item) => (
                   <Link
                     key={item.title}
                     href={getLocalizedHref(item.href)}

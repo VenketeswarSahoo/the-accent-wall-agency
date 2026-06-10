@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image, { ImageProps } from "next/image";
 import { cn } from "@/lib/utils";
 
-export function BlurImage({ className, ...props }: ImageProps) {
+export function BlurImage({ className, alt = "...", ...props }: ImageProps) {
   const [isLoading, setLoading] = useState(true);
 
   return (
@@ -12,8 +12,9 @@ export function BlurImage({ className, ...props }: ImageProps) {
       className={cn(
         "transition-all duration-500 ease-in-out",
         isLoading ? "blur-md scale-105" : "blur-0 scale-100",
-        className
+        className,
       )}
+      alt={alt}
       onLoad={() => setLoading(false)}
       {...props}
     />

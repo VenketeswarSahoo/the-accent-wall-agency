@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { BlurImage } from "../ui/blur-image";
 import { mandala10, mandala11, mandala12, mandala13, mandala4, mandala5, mandala6, mandala7, mandala8 } from "@/assets";
+import { type StaticImageData } from "next/image";
+import { Dictionary } from "@/app/[lang]/dictionaries";
 
 const row1Images = [
   mandala10,
@@ -22,7 +24,12 @@ const row3Images = [
   mandala13
 ];
 
-const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
+interface ProjectRowProps {
+  images: (StaticImageData | string)[];
+  x: MotionValue<string>;
+}
+
+const ProjectRow = ({ images, x }: ProjectRowProps) => (
   <div className="flex w-full overflow-hidden">
     <motion.div style={{ x }} className="flex gap-4 flex-none">
       {images.map((img, index) => (
@@ -58,7 +65,7 @@ const ProjectRow = ({ images, x }: { images: any[]; x: any }) => (
 );
 
 interface SelectedWorkSectionProps {
-  dict: any;
+  dict: Dictionary;
 }
 
 const SelectedWorkSection = ({ dict }: SelectedWorkSectionProps) => {

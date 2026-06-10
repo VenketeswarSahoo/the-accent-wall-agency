@@ -5,8 +5,10 @@ import { motion } from "motion/react";
 import { Loader2 } from "lucide-react";
 import Section from "@/components/ui/section";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface StudioClientProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
   bgMandalas?: React.ReactNode;
   children?: React.ReactNode;
@@ -16,7 +18,6 @@ export default function StudioClient({
   dict,
   lang,
   bgMandalas,
-  children,
 }: StudioClientProps) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -52,9 +53,6 @@ export default function StudioClient({
   const studioPageDict = dict?.studioPage || {};
 
   const isEs = lang === "es";
-  const pillars = isEs
-    ? ["Showroom Físico", "Previsualización Spatial AI", "Murales de Diseño"]
-    : ["Physical Showroom", "Spatial AI Previews", "Bespoke Mural Art"];
 
   return (
     <div className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col justify-between pt-20 lg:pt-24">

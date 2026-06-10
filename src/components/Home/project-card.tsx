@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { BlurImage } from "../ui/blur-image";
 import { ProjectLink } from "@/assets";
 import { ArrowUpRight } from "lucide-react";

@@ -16,8 +16,6 @@ import {
   partner13,
   partner14,
   partner15,
-  partner16,
-  partner17,
 } from "@/assets";
 
 const partnerLogos = [
@@ -40,8 +38,10 @@ const partnerLogos = [
 
 import Section from "../ui/section";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface PartnerSectionProps {
-  dict: any;
+  dict: Dictionary;
 }
 
 const PartnerSection = ({ dict }: PartnerSectionProps) => {

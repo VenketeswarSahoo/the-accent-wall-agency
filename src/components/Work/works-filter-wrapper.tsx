@@ -6,8 +6,16 @@ import Section from "@/components/ui/section";
 import SoonCard from "./soon-card";
 import { cn } from "@/lib/utils";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
+interface ProjectItem {
+  title: string;
+  categories: string;
+  image: string;
+}
+
 interface WorksFilterWrapperProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
 }
 
@@ -76,7 +84,7 @@ export default function WorksFilterWrapper({
   };
 
   const getFilteredCount = (categoryId: string) => {
-    return localizedProjects.filter((p: any) =>
+    return localizedProjects.filter((p: ProjectItem) =>
       matchesCategory(p.categories, categoryId),
     ).length;
   };

@@ -7,8 +7,14 @@ import { LogoIcon } from "@/assets";
 import NewsletterForm from "./newsletter-form";
 import CurrentYear from "./current-year";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
+interface ServiceItem {
+  title: string;
+}
+
 interface FooterProps {
-  dict: any;
+  dict: Dictionary;
   lang?: string;
 }
 
@@ -168,7 +174,7 @@ const Footer = ({ dict, lang = "en" }: FooterProps) => {
                 {dict?.footer?.servicesHeader}
               </span>
               <ul className="flex flex-col gap-4">
-                {(dict?.services?.list || []).map((item: any) => (
+                {(dict?.services?.list || []).map((item: ServiceItem) => (
                   <li key={item.title}>
                     <Link
                       href={`/${lang}/coming-soon`}

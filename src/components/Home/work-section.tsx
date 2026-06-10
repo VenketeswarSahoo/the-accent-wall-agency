@@ -5,8 +5,10 @@ import Section from "../ui/section";
 import ProjectCard from "./project-card";
 import * as Mandalas from "@/assets";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface WorkSectionProps {
-  dict: any;
+  dict: Dictionary;
   lang?: string;
   isWorksPage?: boolean;
   activeCategory?: string;
@@ -14,10 +16,12 @@ interface WorkSectionProps {
   hideFooterLink?: boolean;
 }
 
+import { type StaticImageData } from "next/image";
+
 interface Project {
   title: string;
   categories: string;
-  image: any;
+  image: StaticImageData | string;
   isFeatured?: boolean;
 }
 

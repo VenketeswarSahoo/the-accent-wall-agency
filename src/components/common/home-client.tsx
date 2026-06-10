@@ -7,8 +7,10 @@ import NavMenu from "@/components/Navbar/nav-menu";
 import Image from "next/image";
 import { LogoIcon } from "@/assets";
 
+import { Dictionary } from "@/app/[lang]/dictionaries";
+
 interface HomeClientProps {
-  dict: any;
+  dict: Dictionary;
   lang: string;
 }
 

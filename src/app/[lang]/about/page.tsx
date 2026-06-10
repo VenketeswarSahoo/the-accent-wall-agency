@@ -4,6 +4,18 @@ import { getDictionary, hasLocale, Locale } from "@/app/[lang]/dictionaries";
 import Mandala from "@/components/ui/mandala";
 import Section from "@/components/ui/section";
 
+interface HowWeWorkCard {
+  num: string;
+  bgNum: string;
+  title: string;
+  description: string;
+}
+
+interface StatItem {
+  value: string;
+  label: string;
+}
+
 interface PageProps {
   params: Promise<{ lang: string }>;
 }
@@ -188,7 +200,7 @@ export default async function AboutPage({ params }: PageProps) {
 
           {/* Grid container with card divider borders */}
           <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 bg-[#070707]/30 overflow-hidden">
-            {aboutPageDict.howWeWork?.cards?.map((card: any, index: number) => {
+            {aboutPageDict.howWeWork?.cards?.map((card: HowWeWorkCard, index: number) => {
               const borderClasses =
                 index === 0
                   ? "border-b md:border-r border-white/10"
@@ -235,7 +247,7 @@ export default async function AboutPage({ params }: PageProps) {
         className="relative z-10 w-full border-t border-white/5 bg-black"
       >
         <div className="grid grid-cols-2 lg:grid-cols-4 bg-[#070707]/30 overflow-hidden">
-          {aboutPageDict.stats?.map((stat: any, index: number) => {
+          {aboutPageDict.stats?.map((stat: StatItem, index: number) => {
             const borderClasses =
               index === 0
                 ? "border-r border-b lg:border-b-0 border-white/10"

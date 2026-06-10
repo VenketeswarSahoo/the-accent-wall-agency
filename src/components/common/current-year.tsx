@@ -7,7 +7,10 @@ export default function CurrentYear() {
   const [year, setYear] = useState("2026");
 
   useEffect(() => {
-    setYear(new Date().getFullYear().toString());
+    const handle = requestAnimationFrame(() => {
+      setYear(new Date().getFullYear().toString());
+    });
+    return () => cancelAnimationFrame(handle);
   }, []);
 
   return <>{year}</>;
