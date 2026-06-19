@@ -8,6 +8,7 @@ import { getDictionary, Locale } from "@/app/[lang]/dictionaries";
 import HomeClient from "@/components/common/home-client";
 import Footer from "@/components/common/footer";
 import SmoothScroll from "../../components/ui/smooth-scroll";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -127,6 +128,7 @@ export default async function RootLayout({
         "font-haffer",
       )}
     >
+      <GoogleTagManager gtmId="GTM-P34X85S9" />
       <body className="min-h-full flex flex-col bg-black">
         <TooltipProvider>
           <SmoothScroll />
@@ -135,6 +137,7 @@ export default async function RootLayout({
           <Footer dict={dict} lang={lang} />
         </TooltipProvider>
       </body>
+      <GoogleAnalytics gaId="G-JPL0KHXP5H" />
     </html>
   );
 }
